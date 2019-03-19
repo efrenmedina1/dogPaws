@@ -7,7 +7,7 @@ switch (window.location.hostname) {
     // this is the deployed angular application
     case 'https://dogbreedproject.herokuapp.com/':
         // this is the full url of your deployed API
-        APIURL = 'https://kcp-pieapi.herokuapp.com'
+        APIURL = 'https://dog-project-breed-api.herokuapp.com/'
         break;
     default:
         // this is the local host name of your API
