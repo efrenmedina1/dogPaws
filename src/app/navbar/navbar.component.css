@@ -5,7 +5,7 @@
     top: 0;
     padding: 0;
     color: rgba(104,154,153,1);
-    height: 8vh;
+    height: 10vh;
     background-color:  rgb(83, 83, 83);
     
 }
@@ -17,7 +17,7 @@
     margin: 0px;
     padding: 0px;
     background-color: rgb(83, 83, 83);
-    height: 8vh
+    height: 10vh
 }
 .two2{
     width: 50%;
@@ -35,7 +35,7 @@
     margin: 0px;
     padding: 0px;
     background-color: rgb(83, 83, 83);
-    height: 8vh;
+    height: 10vh;
     text-align: center;
     font-size: 1.5rem;
     color: rgba(104,154,153,1);
@@ -49,7 +49,7 @@
 }
 
 .logo{
-    height: 8vh;
+    height: 10vh;
 }
 .nav-link{
     color: rgb(87,207, 255);
