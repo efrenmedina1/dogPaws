@@ -1,3 +1,108 @@
-<p>
-  dog-list works!
-</p>
+<h1></h1>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+<div *ngFor="let dog of dog">
+
+
+</div>
+<br>
+
+
+
+<br>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<!-- <div class="box"> -->
+<div class="container">
+  <div class="row">
+
+    <div class="list" *ngFor="let dog of dog">
+
+      <!-- <div class="box-part text-center">
+
+          <p><img class=" img-fluid" src="{{dog.picture}}"
+              alt="card image"></p>
+
+          <div class="title">
+            <h4>{{ dog.name }}</h4>
+          </div>
+
+          <div class="text">
+            <span> {{dog.description}} </span>
+          </div>
+
+          <div class="text">
+            <span> {{dog.age}} </span>
+          </div>
+
+          <div class="text">
+              <span> {{dog.breed}} </span>
+            </div>
+
+          <a href="mailto:redRocket2019@outlook.com">Contact Info</a>
+       
+        </div>
+        
+      </div>
+
+    
+
+    -->
+
+      <div id="list" class="image-flip" ontouchstart="this.classList.toggle('hover');">
+        <div class="mainflip">
+          <div class="frontside">
+            <div class="card" id="card" style="width:20rem;">
+              <img class="card-img-top img- fluid" src="{{dog.picture}}" alt="card image">
+              <div class="card-body">
+                <h4 class="card-title text-center">Name: {{ dog.name }}</h4>
+                <!-- <p class="card-text">This is basic card with image on top, title, description and button.</p> -->
+                <h4 class="card-title text-center">Breed: {{ dog.breed }}</h4>
+                <h4 class="card-title text-center">Age: {{ dog.age }}</h4>
+                
+              </div>
+            </div>
+          </div>
+          <div class="backside" >
+            <div class="card"  id="card" style="width:20rem; text-align: center; background-color: rgb(90, 89, 89)" >
+
+              <div class="text">
+                <h2>About</h2>
+                <span> {{dog.description}} </span>
+              </div>
+              <style>
+                a:link {
+                  color:rgb(87, 207, 255)
+                }
+                a:hover {
+                  color: rgb(252, 0, 105)
+                }
+                a:active {
+                  color:rgb(87, 207, 255)
+                }
+              </style>
+              <div>
+                  <a class="link" href="mailto:redRocket2019@outlook.com">Contact Info</a>
+              </div>
+
+              <!-- <div class="card-header">
+        This is a Header
+        </div>
+        <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class="card-text">This is a card component with header and footer.</p>
+        <a href="#" class="btn btn-info btn-md">Info Button</a>
+        </div>
+        <div class="card-footer">
+        This is a Footer
+        </div> -->
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
