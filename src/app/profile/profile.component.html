@@ -1,3 +1,304 @@
-<p>
-  profile works!
-</p>
+<div class="createProfile" *ngIf="roleService.userRole"  > 
+
+  <div *ngIf="profileTrue"  >  
+    
+
+            <form class="my-form" (submit)="createProfile($event)">
+           
+                <mat-toolbar>
+                  <span>Make your Profile</span>
+                </mat-toolbar>
+                <mat-card class="my-card">
+                   <mat-card-content>
+                          <div class="label" >
+                            <input class="input" matInput   name="name"  type="name" >
+                            <label class="input" >Name</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input"  matInput   name="age"  type="age" >
+                            <label class="input" >Age</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="url"  type="url" >
+                            <label class="input" >Picture</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="email"  type="email" style="width: 20rem;" >
+                            <label class="input" >Email</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="phone"  type="phone" >
+                            <label class="input" >Phone</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="address"  type="address" style="width: 20rem;" >
+                            <label class="input" >Address</label>
+                          </div>
+                          <div class="labeldescription" >
+                          <textarea   
+                          class="commentBox" 
+                          placeholder="Please put a description"
+                          required
+                          data-validation-required-message="Please put a description"
+                          name="message"
+                          maxlength="250"
+                                 ></textarea>
+                         </div>
+                          
+                        
+                            
+                            
+                   </mat-card-content>
+                   
+              
+          </mat-card>
+          <br>
+          <button mat-raised-button (click)="submit" color="gray">Create Profile</button>
+          
+        </form>
+
+
+    
+  </div>
+</div>
+
+
+
+<div  class="table"  *ngFor="let profile of profile ">
+    <div class="two" > 
+      <img src="{{ profile.picture }}" class="img" />
+      <br>
+  
+    </div> 
+  
+    <div class="three"> 
+      <p>{{ profile.about }}  </p>
+    </div>
+
+    <div class="four">
+      <p> Name:  {{ profile.name }} </p>
+      <p> Age:  {{ profile.age }} </p>
+      <p> Email:  {{ profile.email }} </p>
+      <p> Phone:  {{ profile.phone }} </p>
+      <p> Address:  {{ profile.address }} </p>
+
+      <form (submit)="deleteProfile($event)"> 
+          <input type="submit" value="🗑️Profile" id="{{ profile.id }}" >
+        </form>
+        
+          <form (submit)="createDog($event)">
+              <div class="input"> 
+                <h3>Create a new Dog</h3>
+                <br>
+                <div class="input">
+                  <label>Breed</label>
+                  <input type="breed">
+                </div>
+                <div class="input">
+                  <label>Name</label>
+                  <input type="name">
+                </div>
+                <div class="input">
+                    <label>Age</label>
+                    <input type="age">
+                  </div>
+                <div class="input">
+                  <label>Picture URL</label>
+                  <input type="picture">
+                </div>
+                
+                <textarea   
+                  class="commentBox" 
+                  placeholder="Please put a description"
+                  required
+                  data-validation-required-message="Please put a description"
+                  name="message"
+                  maxlength="250"
+                         ></textarea>
+              </div>
+        
+              <div class="input">
+                <input type="submit" value="Create Dog">
+              </div>
+            </form>
+          </div>
+        <div>
+     
+
+
+      </div>
+
+
+      <div class="four2">
+          <h2> {{profile.name}}'s Dogs </h2>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <div  *ngFor="let dog of dog"  >
+          <div id="box" class="box">
+            <div class="container">
+              <div class="row">
+          
+                
+          
+                  <div id="card" >
+          
+                    <p><img class=" img-fluid" src="{{dog.picture}}"
+                        alt="card image"></p>
+          
+                    <div class="title">
+                      <h4> {{ dog.name }}</h4>
+                    </div>
+          
+                    <div class="text">
+                      <span> Description: {{dog.description}} </span>
+                    </div>
+          
+                    <div class="text">
+                      <span>Age: {{dog.age}} </span>
+                    </div>
+          
+                    <div class="text">
+                        <span>Breed: {{dog.breed}} </span>
+                      </div>
+
+                      <form (submit)="deleteDog($event)"> 
+                          <input type="submit" value="🗑️Dog" id="{{ dog.id }}" >
+                        </form>
+                        <form (submit)="dogUpdate($event)">
+                            <div class="input"> 
+                              <h3>Create a new Dog</h3>
+                              <br>
+                              <div class="input">
+                                <label>Breed</label>
+                                <input type="breed" value="{{dog.breed}}" >
+                              </div>
+                              <div class="input">
+                                <label>Name</label>
+                                <input type="name" value="{{dog.name}}" >
+                              </div>
+                              <div class="input">
+                                  <label>Age</label>
+                                  <input type="age" value="{{dog.age}}" >
+                                </div>
+                              <div class="input">
+                                <label>Picture URL</label>
+                                <input type="picture" value="{{dog.picture}}" >
+                              </div>
+                              
+                              <textarea   
+                                class="commentBox" 
+                                placeholder="Please put a description"
+                                required
+                                data-validation-required-message="Please put a description"
+                                name="message"
+                                maxlength="250"
+                                value="{{dog.description}}"   ></textarea>
+                            </div>
+                      
+                            <div class="input">
+                              <input id=" {{dog.id}} " type="submit" value="Update Dog">
+                            </div>
+                          </form>
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="four3">
+          <h2> {{profile.name}}'s Comments </h2>
+          <div  class="table"  *ngFor="let comment of comment ">
+             
+              <div class="comment"> 
+                <p>{{ comment.description }}</p>
+              </div>
+            
+                <div *ngIf="roleService.adminRole"  > 
+                <form (submit)="delete($event)">
+                  <div class="input">
+                    <input type="submit" value="Delete">
+                  </div>
+                </form>
+                <form (submit)="update($event)">
+                  <div class="input">
+                    <input type="submit" value="Update">
+                  </div>
+                </form>
+              </div>
+              </div>
+       </div>
+
+    </div>
+
+    <div  class="table"  *ngFor="let profile of profile ">
+        <div *ngIf="roleService.userRole" >  
+            <form class="my-form" (submit)="profileUpdate($event)">
+           
+                <mat-toolbar>
+                  <span>Make your Profile</span>
+                </mat-toolbar>
+                <mat-card class="my-card">
+                   <mat-card-content>
+                          <div class="label1" >
+                            <input class="input" matInput   name="name"  type="name" value="{{profile.name}}" >
+                            <label class="input" >Name</label>
+                          </div>
+                          <div class="label2"  >
+                            <input class="input"  matInput   name="age"  type="age" style="width: 5rem;" value="{{profile.age}}" >
+                            <label class="input" >Age</label>
+                          </div>
+                          <div class="label3" >
+                            <input class="input"  matInput   name="url"  type="url" style="width: 40rem;" value="{{profile.picture}}" >
+                            <label class="input" >Picture</label>                              
+                          </div>
+                          <div class="label7">&nbsp;</div>
+                          <div class="label4" >
+                            <input class="input" matInput   name="email"  type="email" style="width: 20rem;" value="{{profile.email}}" >
+                            <label class="input" >Email</label>
+                          </div>
+                          <div class="label5" >
+                            <input class="input" matInput   name="phone"  type="phone" value="{{profile.phone}}" >
+                            <label class="input" >Phone</label>
+                          </div>
+                          <div class="label7">&nbsp;</div>
+                          <div class="label6" >
+                            <input class="input" matInput   name="address"  type="address" style="width: 50rem;" value="{{profile.address}}" >
+                            <label class="input" >Address</label>
+                          </div>
+                          <div class="label7">&nbsp;</div>
+                          <div class="labeldescription" >
+                          <textarea   
+                          class="commentBox" 
+                          placeholder="Please put a description"
+                          required
+                          data-validation-required-message="Please put a description"
+                          name="message"
+                          maxlength="250"
+                          value="{{profile.about}}"
+                                 ></textarea>
+                         </div>
+                          
+                        
+                            
+                            
+                   </mat-card-content>
+                   
+              
+          </mat-card>
+          <br>
+          <button id="{{profile.id}}" mat-raised-button (click)="submit" color="gray">Update Profile</button>
+          
+        </form>
+
+           
+              
+            </div>
+    </div>
+
+   
+
+    <div *ngIf="roleService.noRole" > 
+      <app-auth></app-auth>
+    </div>
