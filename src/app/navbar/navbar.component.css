@@ -4,7 +4,7 @@
     left: 0;
     top: 0;
     padding: 0;
-    color: rgb(87, 207, 255);
+    color: rgba(104,154,153,1);
     height: 8vh;
     background-color:  rgb(83, 83, 83);
     
@@ -29,7 +29,7 @@
 }
 
 .four{
-    width: 25%;
+    width: 20%;
     float: left;
     display: table-cell;
     margin: 0px;
@@ -38,7 +38,7 @@
     height: 8vh;
     text-align: center;
     font-size: 1.5rem;
-    color: rgb(87, 207, 255);
+    color: rgba(104,154,153,1);
     
 }
 

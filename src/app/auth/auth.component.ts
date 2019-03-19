@@ -13,6 +13,7 @@ export class AuthComponent implements OnInit {
   constructor(private router: Router, public roleService: RoleService ) { }
 
   ngOnInit() {
+    this.roleService.getToken()
   }
   signUp(e) {
     e.preventDefault(); 
@@ -92,6 +93,7 @@ headers: new Headers({
 // })
 .then(response =>  sessionStorage.setItem('role', this.roleService.role) )
 .then(response =>  sessionStorage.setItem('token', this.roleService.token) )
+.then(response =>  this.ngOnInit() )
 // .then(response =>  window.location.reload() )
 }
 
