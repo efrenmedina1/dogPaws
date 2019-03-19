@@ -5,7 +5,7 @@ export let APIURL = '';
 
 switch (window.location.hostname) {
     // this is the deployed angular application
-    case 'https://dog-project-breed.herokuapp.com/':
+    case 'https://dogbreedproject.herokuapp.com/':
         // this is the full url of your deployed API
         APIURL = 'https://kcp-pieapi.herokuapp.com'
         break;
