@@ -11,18 +11,12 @@
    padding: 0;
  }
  
- .display-4 {
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 4rem;
-     color: white;
+ .container{
      text-align: center
- 
- 
  }
  
  #logo {
-   position: relative;
-   left: 15rem;
+  
    height: 40rem;
    width: 40rem;
  
