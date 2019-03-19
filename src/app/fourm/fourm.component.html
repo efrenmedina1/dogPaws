@@ -1,3 +1,54 @@
-<p>
-  fourm works!
-</p>
+<h1>Dog Talk</h1>
+
+
+    <div class="createPost" *ngIf="roleService.userRole"  > 
+    <form (submit)="createPost($event)">
+        <div class="input"> 
+          <label>Create Your Post</label>
+          <br>
+          
+          
+          <textarea   
+            class="commentBox" 
+            placeholder="Your Message"
+            required
+            data-validation-required-message="Please leave a message"
+            name="message"
+            maxlength="250"
+                   ></textarea>
+        </div>
+  
+        <div class="input">
+          <input type="submit" value="Post Comment">
+        </div>
+      </form>
+    </div>
+
+<div  class="table"  *ngFor="let comment of comment ">
+  <div class="two" > 
+    <img src="../../assets/img/stock/pom.jpg" class="img" />
+   
+    <br>
+
+    <p> User ID : {{ comment.userId }}</p>
+  </div> 
+
+  <div class="three"> 
+    <p>{{ comment.description }}</p>
+  </div>
+
+    <div *ngIf="roleService.adminRole"  > 
+    <form (submit)="delete($event)">
+      <div class="input">
+        <input id="{{comment.id}}" type="submit" value="Delete">
+      </div>
+    </form>
+    <!-- <form (submit)="update($event)">
+      <div class="input">
+        <input type="submit" value="Update">
+      </div>
+    </form> -->
+  </div>
+
+  </div>
+  
