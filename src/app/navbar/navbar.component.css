@@ -1,0 +1,60 @@
+.container-fluids{
+    display: table;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    padding: 0;
+    color: rgb(87, 207, 255);
+    height: 8vh;
+    background-color:  rgb(83, 83, 83);
+    
+}
+
+.two{
+    width: 50%;
+    float: left;
+    display: table-cell;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(83, 83, 83);
+    height: 8vh
+}
+.two2{
+    width: 50%;
+    float: left;
+    display: table-cell;
+    margin: 0px;
+    padding: 0px; 
+    
+}
+
+.four{
+    width: 25%;
+    float: left;
+    display: table-cell;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(83, 83, 83);
+    height: 8vh;
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(87, 207, 255);
+    
+}
+
+.four:hover{
+    background-color: rgba(0, 0, 0, 0.537);
+    cursor: pointer;
+    
+}
+
+.logo{
+    height: 5vh;
+}
+.nav-link{
+    color: rgb(87,207, 255);
+    font-size: 3vh;
+    text-align: right
+    
+}
+

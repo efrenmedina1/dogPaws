@@ -1,0 +1,57 @@
+
+      
+
+<div class="container-fluids" > 
+  <div class="two" >
+      <div class="two" >
+        <img class="logo" src="../../assets/img/stock/logo.jpg" />
+      </div>
+
+      <div class="two" >
+        
+        <!-- <form (submit)="THEWORLD($event)">
+          
+            <div class="input">
+              <input type="submit" value="Set Role Admin">
+            </div>
+          </form>
+          <form (submit)="userRole($event)">
+              <div class="input">
+                <input type="submit" value="Set Role user">
+              </div>
+            </form> -->
+          <form (submit)="logout($event)">
+              <div class="input">
+                <input type="submit" value="Logout">
+              </div>
+            </form>
+
+          
+
+
+      </div>
+  </div>
+
+  <div class="two2" >
+
+      <div class="four" routerLink="/home" >
+          <p>Home</p>
+      </div>
+          
+      <div class="four" routerLink="/doglist" >
+          <p>Dogs</p>
+      </div>
+
+      <div class="four" routerLink="/fourm" >
+          <p>Chat</p>
+      </div>
+
+      <div class="four" routerLink="/profile" >
+
+          <p *ngIf="roleService.userRole" >Profile</p>
+          <p *ngIf="roleService.noRole">Login</p>
+      </div>
+
+  </div>
+
+</div>
