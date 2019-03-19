@@ -9,7 +9,7 @@ import { Router } from '@angular/router'
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router, private roleService: RoleService) { }
+  constructor(private router: Router, public roleService: RoleService) { }
 
   ngOnInit() {
     this.roleService.getToken()
