@@ -3,6 +3,11 @@ import {RoleService } from "../role.service"
 import { HttpClient } from '@angular/common/http';
 import { APIURL } from '../../environments/environment.prod';
 import { Router } from '@angular/router'
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-topic',
@@ -12,8 +17,10 @@ import { Router } from '@angular/router'
 export class TopicComponent implements OnInit {
 
   public comment = [];
+  
 
-  constructor(public roleService: RoleService, private router: Router, private http: HttpClient) { }
+  constructor(public roleService: RoleService, private router: Router, private http: HttpClient, private modalService: NgbModal,
+    ) { }
 
   ngOnInit() {
     this.roleService.getToken()
@@ -59,5 +66,8 @@ export class TopicComponent implements OnInit {
     })
     .then((res) => this.ngOnInit() )
   }
+
+
+  
 
 }
