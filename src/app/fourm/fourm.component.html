@@ -26,15 +26,12 @@
 
 <div  class="table"  *ngFor="let comment of comment ">
   <div class="two" > 
-    <img src="../../assets/img/stock/pom.jpg" class="img" />
-   
-    <br>
 
-    <p> User ID : {{ comment.userId }}</p>
+    <p> Topic {{comment.id}}</p>
   </div> 
 
-  <div class="three"> 
-    <p>{{ comment.description }}</p>
+  <div id="{{comment.id}}"  class="three" (click)="goTopic($event)" > 
+    <p id="{{comment.id}}" >{{ comment.description }}</p>
   </div>
 
     <div *ngIf="roleService.adminRole"  > 

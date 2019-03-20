@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component'
 import { FourmComponent } from './fourm/fourm.component'
 import { DogListComponent } from './dog-list/dog-list.component'
 import { ProfileComponent } from './profile/profile.component'
+import { TopicComponent } from './topic/topic.component'
 
 
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'fourm', component: FourmComponent },
   { path: 'doglist', component: DogListComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'topic', component: TopicComponent },
   { path: '', component: HomeComponent  },
   { path: '**', redirectTo: '' }
 ];

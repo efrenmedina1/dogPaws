@@ -13,6 +13,7 @@ import { DogListComponent } from './dog-list/dog-list.component';
 import { FourmComponent } from './fourm/fourm.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TopicComponent } from './topic/topic.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ProfileComponent } from './profile/profile.component';
     DogListComponent,
     FourmComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    TopicComponent
   ],
   imports: [
     BrowserModule,

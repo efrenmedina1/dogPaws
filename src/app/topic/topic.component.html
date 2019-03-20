@@ -1,0 +1,49 @@
+<div><h2>Topic {{this.roleService.topic}} </h2></div>
+
+    <div  class="table"  *ngFor="let comment of comment ">
+        <div class="two" > 
+      
+          <p> Post</p>
+        </div> 
+      
+        <div id="{{comment.id}}"  class="three" (click)="goTopic($event)" > 
+          <p id="{{comment.id}}" >{{ comment.comment }}</p>
+        </div>
+      
+          <div *ngIf="roleService.adminRole"  > 
+          <form (submit)="delete($event)">
+            <div class="input">
+              <input id="{{comment.id}}" type="submit" value="Delete">
+            </div>
+          </form>
+          <!-- <form (submit)="update($event)">
+            <div class="input">
+              <input type="submit" value="Update">
+            </div>
+          </form> -->
+        </div>
+      
+        </div>
+
+        <div class="createPost" *ngIf="roleService.userRole"  > 
+            <form (submit)="createPost($event)">
+                <div class="input"> 
+                  <label>Create Your Post</label>
+                  <br>
+                  
+                  
+                  <textarea   
+                    class="commentBox" 
+                    placeholder="Your Message"
+                    required
+                    data-validation-required-message="Please leave a message"
+                    name="message"
+                    maxlength="250"
+                           ></textarea>
+                </div>
+          
+                <div class="input">
+                  <input type="submit" value="Post Comment">
+                </div>
+              </form>
+            </div>

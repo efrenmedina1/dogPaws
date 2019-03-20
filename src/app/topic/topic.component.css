@@ -30,7 +30,8 @@
 .commentBox{
     height: 15vh;
     width: 90%;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    
 }
 
 .three{
@@ -40,8 +41,8 @@
     background-color:  rgba( 144,145,137,1);
     color: white;
     font-size: 1.5rem;
-    height: 2.5rem;
-    text-align: center;
+    height: 10rem;
+    
 
 }
 
@@ -51,7 +52,7 @@
     display: table-cell;
     background-color:  rgba(104,154,153,1);
     font-size: 1.5rem;
-    height: 2.5rem;
+    height: 10rem;
     text-align: center;
 }
 

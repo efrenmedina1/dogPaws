@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RoleService } from "../role.service"
 import { HttpClient } from '@angular/common/http';
 import { APIURL } from '../../environments/environment.prod';
+import { Router } from '@angular/router'
 
 
 @Component({
@@ -14,7 +15,7 @@ export class FourmComponent implements OnInit {
 public comment = [];
 
 
-  constructor(public roleService: RoleService, private http: HttpClient) { }
+  constructor(public roleService: RoleService, private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
 
@@ -55,9 +56,14 @@ delete(e) {
   console.log("delete")
 }
 
-update(DIO) {
-  DIO.preventDefault(); 
-  console.log("update")
+goTopic(e) {
+  e.preventDefault(); 
+  let commentId = e.target.id;
+  console.log(e.target.id)
+  this.roleService.topic = commentId
+  sessionStorage.setItem('topic', this.roleService.topic)
+  this.router.navigate(['topic'])
+
 }
 
 createPost(e) {

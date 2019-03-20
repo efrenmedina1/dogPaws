@@ -10,12 +10,14 @@ export class RoleService {
   public noRole = true;
   public role = '';
   public token = '';
+  public topic = '';
 
   constructor() { }
   
   getToken(){
     this.role = sessionStorage.getItem('role')
    this.token = sessionStorage.getItem('token')
+   this.topic = sessionStorage.getItem('topic')
    if (this.role == "admin" ) {
     this.adminRole = true;
     this.userRole = true;
