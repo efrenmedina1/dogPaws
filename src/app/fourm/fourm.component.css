@@ -28,7 +28,7 @@
 }
 
 .input1{
-    width: 20%;
+    width: 30%;
     float: left;
     display: table-cell;
     background-color:  rgba(104,154,153,1);
@@ -38,7 +38,7 @@
 }
 
 .input2{
-    width: 80%;
+    width: 70%;
     float: left;
     display: table-cell;
     background-color:  rgba( 144,145,137,1);
@@ -60,7 +60,7 @@
 }
 
 .three{
-    width: 80%;
+    width: 70%;
     float: left;
     display: table-cell;
     background-color:  rgba( 144,145,137,1);
@@ -73,7 +73,7 @@
 }
 
 .two{
-    width: 20%;
+    width: 30%;
     float: left;
     display: table-cell;
     background-color:  rgba(104,154,153,1);

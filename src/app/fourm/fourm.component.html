@@ -29,8 +29,7 @@
 
 <div  class="table"  *ngFor="let comment of comment ">
   <div class="two" > 
-    <p> Posted By: {{comment.username}}</p>
-    <p> Topic ID: {{comment.id}}</p>
+    <p> Posted by: <b>{{comment.username}}</b></p>
   </div> 
 
   <div id="{{comment.id}}"  class="three" (click)="goTopic($event)" > 

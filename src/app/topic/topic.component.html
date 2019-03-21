@@ -3,8 +3,8 @@
     <div  class="table"  *ngFor="let comment of comment ">
         <div id="{{comment.userId}}" (click)="profileTrue($event)" class="two" > 
       
-          <p id="{{comment.userId}}" > Click for user Profile</p>
-          <p id="{{comment.userId}}" >Posted by: {{comment.username}}</p>
+          <p id="{{comment.userId}}" >Posted by: </p>
+          <p id="{{comment.userId}}" > <b>  {{comment.username}} </b></p>
           <p id="{{comment.userId}}" >User ID: {{comment.userId}}</p>
           
         </div> 
