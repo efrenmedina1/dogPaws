@@ -17,6 +17,8 @@ import { Validators } from '@angular/forms';
 export class TopicComponent implements OnInit {
 
   public comment = [];
+  profile = false;
+  public Profile = {};
   
 
   constructor(public roleService: RoleService, private router: Router, private http: HttpClient, private modalService: NgbModal,
@@ -65,6 +67,34 @@ export class TopicComponent implements OnInit {
       })
     })
     .then((res) => this.ngOnInit() )
+  }
+
+
+  profileTrue(e) {
+    e.preventDefault(); 
+    let id = e.target.id;
+    console.log(id)
+    fetch(`${APIURL}/profile/${id}`,{
+      method: 'GET',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': this.roleService.token
+      })
+    })
+    .then(response =>{  response.json()
+    .then(data => {this.Profile = data})
+    .then(data => console.log(this.Profile))
+  })
+
+    this.profile = true
+    
+  }
+
+  profileFalse(e) {
+    e.preventDefault(); 
+
+    this.profile = false
+    
   }
 
 

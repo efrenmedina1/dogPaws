@@ -1,26 +1,27 @@
 <h1>Dog Talk</h1>
 
 
-    <div class="createPost" *ngIf="roleService.userRole"  > 
+    <div *ngIf="roleService.userRole"  > 
     <form (submit)="createPost($event)">
-        <div class="input"> 
-          <label>Create Your Post</label>
-          <br>
-          
-          
-          <textarea   
+        <div class="table">
+        <div class="input1"> 
+          <label>Create Your Topic</label>   
+        </div>
+  
+        <div class="input2">
+            <textarea   
             class="commentBox" 
-            placeholder="Your Message"
+            placeholder="Your topic"
             required
             data-validation-required-message="Please leave a message"
             name="message"
-            maxlength="250"
+            maxlength="80"
                    ></textarea>
         </div>
-  
-        <div class="input">
-          <input type="submit" value="Post Comment">
         </div>
+        <div class="input3" > 
+        <input type="submit" value="Post Comment">
+      </div>
       </form>
     </div>
 

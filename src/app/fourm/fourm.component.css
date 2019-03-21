@@ -8,29 +8,50 @@
     margin-bottom: 4vh;
     margin-left: 4vw;
     margin-right: 4vw;
+    box-shadow: 0 2vw 4vw 0 rgba(0, 0, 0, 0.497), 0 2vw 4vw 0 rgba(0, 0, 0, 0.585);
     
 }
 
 .createPost{
-    width: 70%;
-    float: left;
-    display: table-cell;
-    height: 30vh;
-    margin: 3vw;
+    display: table;
+    width: 80%;
+    left: 0;
+    top: 0;
+    margin-bottom: 4vh;
     margin-left: 4vw;
     margin-right: 4vw;
-    padding: 1vh;
-    border: solid 5px black
+    box-shadow: 0 2vw 4vw 0 rgba(0, 0, 0, 0.497), 0 2vw 4vw 0 rgba(0, 0, 0, 0.585);
 }
 
 .createPost:hover{
     box-shadow: 0 2vw 4vw 0 rgba(0, 0, 0, 0.497), 0 2vw 4vw 0 rgba(0, 0, 0, 0.585);
 }
 
+.input1{
+    width: 20%;
+    float: left;
+    display: table-cell;
+    background-color:  rgba(104,154,153,1);
+    font-size: 1.5rem;
+    height: 2.7rem;
+    text-align: center;
+}
+
+.input2{
+    width: 80%;
+    float: left;
+    display: table-cell;
+    background-color:  rgba( 144,145,137,1);
+    color: white;
+    font-size: 1.5rem;
+    height: 2.7rem;
+}
+
 .commentBox{
-    height: 15vh;
-    width: 90%;
-    font-size: 1.5rem
+    height: 2.7rem;
+    width: 100%;
+    font-size: 1.5rem;
+    
 }
 
 .three{
