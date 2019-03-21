@@ -18,7 +18,8 @@ export class AuthComponent implements OnInit {
   signUp(e) {
     e.preventDefault(); 
     console.log(e);
-    var username = e.target.elements[0].value;
+    var user = e.target.elements[0].value;
+    var username = user.toLowerCase();
     var password = e.target.elements[1].value;
   console.log(username, password);
   fetch(`${APIURL}/user`, {
@@ -76,6 +77,7 @@ headers: new Headers({
 } else {
   console.log(json)
   this.roleService.role = json.user.role
+  this.roleService.username = json.user.username
   this.roleService.token = json.sessionToken
 
   this.router.navigate(['home'])
@@ -92,6 +94,7 @@ headers: new Headers({
 //   window.alert("Logged in");
 // })
 .then(response =>  sessionStorage.setItem('role', this.roleService.role) )
+.then(response =>  sessionStorage.setItem('username', this.roleService.username) )
 .then(response =>  sessionStorage.setItem('token', this.roleService.token) )
 .then(response =>  this.ngOnInit() )
 // .then(response =>  window.location.reload() )

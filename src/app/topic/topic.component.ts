@@ -56,6 +56,7 @@ export class TopicComponent implements OnInit {
       body: JSON.stringify(
         {
           "comment": comment,
+          "username": this.roleService.username,
           "userId": 5,
           "commentId": this.roleService.topic
           

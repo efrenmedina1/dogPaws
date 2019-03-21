@@ -15,20 +15,22 @@
             required
             data-validation-required-message="Please leave a message"
             name="message"
-            maxlength="80"
+            minlength=20
+            maxlength=80
+           
                    ></textarea>
         </div>
         </div>
         <div class="input3" > 
-        <input type="submit" value="Post Comment">
+        <input class="dogButton" type="submit" value="🐾Create Topic🐾">
       </div>
       </form>
     </div>
 
 <div  class="table"  *ngFor="let comment of comment ">
   <div class="two" > 
-
-    <p> Topic {{comment.id}}</p>
+    <p> Posted By: {{comment.username}}</p>
+    <p> Topic ID: {{comment.id}}</p>
   </div> 
 
   <div id="{{comment.id}}"  class="three" (click)="goTopic($event)" > 

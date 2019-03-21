@@ -68,8 +68,9 @@ goTopic(e) {
 
 createPost(e) {
     e.preventDefault(); 
-    
     let comment = e.target.elements[0].value;
+    if(comment.length > 8) {
+    
     console.log(comment);
     console.log(this.roleService.token);
 
@@ -78,6 +79,7 @@ createPost(e) {
       body: JSON.stringify(
         {
           "description": comment,
+          "username": this.roleService.username,
           "userId": 5
           
           }
@@ -88,7 +90,9 @@ createPost(e) {
       })
     })
     .then((res) => this.ngOnInit() )
+  } else{
+    window.alert("Topic must be longer then eight characters");
   }
-  
+} 
 
 }

@@ -48,8 +48,9 @@
     height: 10rem;
 }
 .input3{
-   background: none;
-   opacity: 0.5;
+    width: 90%;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .commentBox{
