@@ -75,7 +75,7 @@ export class TopicComponent implements OnInit {
     e.preventDefault(); 
     let id = e.target.id;
     console.log(id)
-    fetch(`${APIURL}/profile/${id}`,{
+    fetch(`${APIURL}/profilelist/${id}`,{
       method: 'GET',
       headers: new Headers({
         'Content-Type': 'application/json',
@@ -94,7 +94,9 @@ export class TopicComponent implements OnInit {
   profileFalse(e) {
     e.preventDefault(); 
 
-    this.profile = false
+    this.profile = false;
+    this.Profile = '';
+    console.log(this.Profile)
     
   }
 

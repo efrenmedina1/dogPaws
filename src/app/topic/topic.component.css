@@ -101,8 +101,8 @@
 
   .modals{
     position: fixed;
-    width: 25rem;
-    height: 25rem;
+    width: 35rem;
+    height: 35rem;
     z-index: 15;
     top: 50%;
     left: 50%;
@@ -143,6 +143,7 @@
     width: 50%;
     float: left;
     display: table-cell;
+    height: 17.5rem;
 }
 
 .img{
@@ -154,4 +155,5 @@
     width: 50%;
     float: left;
     display: table-cell;
+    height: 17.5rem;
 }
