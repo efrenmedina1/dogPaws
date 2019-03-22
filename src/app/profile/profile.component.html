@@ -10,40 +10,44 @@
                 </mat-toolbar>
                 <mat-card class="my-card">
                    <mat-card-content>
-                          <div class="label" >
-                            <input class="input" matInput   name="name"  type="name" >
-                            <label class="input" >Name</label>
-                          </div>
-                          <div class="label" >
-                            <input class="input"  matInput   name="age"  type="age" >
-                            <label class="input" >Age</label>
-                          </div>
-                          <div class="label" >
-                            <input class="input" matInput   name="url"  type="url" >
-                            <label class="input" >Picture</label>
-                          </div>
-                          <div class="label" >
-                            <input class="input" matInput   name="email"  type="email" style="width: 20rem;" >
-                            <label class="input" >Email</label>
-                          </div>
-                          <div class="label" >
-                            <input class="input" matInput   name="phone"  type="phone" >
-                            <label class="input" >Phone</label>
-                          </div>
-                          <div class="label" >
-                            <input class="input" matInput   name="address"  type="address" style="width: 20rem;" >
-                            <label class="input" >Address</label>
-                          </div>
-                          <div class="labeldescription" >
-                          <textarea   
-                          class="commentBox" 
-                          placeholder="Please put a description"
-                          required
-                          data-validation-required-message="Please put a description"
-                          name="message"
-                          maxlength="250"
-                                 ></textarea>
-                         </div>
+                      <div class="label1" >
+                          <input class="input" matInput   name="name"  type="name" value="{{profile.name}}" >
+                          <label class="input" >Name</label>
+                        </div>
+                        <div class="label2"  >
+                          <input class="input"  matInput   name="age"  type="age" style="width: 5rem;" value="{{profile.age}}" >
+                          <label class="input" >Age</label>
+                        </div>
+                        <div class="label3" >
+                          <input class="input"  matInput   name="url"  type="url" style="width: 40rem;" value="{{profile.picture}}" >
+                          <label class="input" >Picture</label>                              
+                        </div>
+                        <div class="label7">&nbsp;</div>
+                        <div class="label4" >
+                          <input class="input" matInput   name="email"  type="email" style="width: 20rem;" value="{{profile.email}}" >
+                          <label class="input" >Email</label>
+                        </div>
+                        <div class="label5" >
+                          <input class="input" matInput   name="phone"  type="phone" value="{{profile.phone}}" >
+                          <label class="input" >Phone</label>
+                        </div>
+                        <div class="label7">&nbsp;</div>
+                        <div class="label6" >
+                          <input class="input" matInput   name="address"  type="address" style="width: 50rem;" value="{{profile.address}}" >
+                          <label class="input" >Address</label>
+                        </div>
+                        <div class="label7">&nbsp;</div>
+                        <div class="labeldescription" >
+                        <textarea   
+                        class="commentBox" 
+                        placeholder="Please put a description"
+                        required
+                        data-validation-required-message="Please put a description"
+                        name="message"
+                        maxlength="250"
+                        value="{{profile.about}}"
+                               ></textarea>
+                       </div>
                           
                         
                             
