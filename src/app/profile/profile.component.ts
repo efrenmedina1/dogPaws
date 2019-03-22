@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RoleService } from "../role.service"
 import { HttpClient } from '@angular/common/http';
 import { APIURL } from '../../environments/environment.prod';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +18,7 @@ public profileTrue = true;
 public profileFalse = false;
 
 
-  constructor(public roleService: RoleService, private http: HttpClient) { }
+  constructor(public roleService: RoleService, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     
@@ -313,6 +314,16 @@ deleteDog(e) {
     .then((res) => this.ngOnInit() )
 
     
+}
+
+goTopic(e) {
+  e.preventDefault(); 
+  let commentId = e.target.id;
+  console.log(e.target.id)
+  this.roleService.topic = commentId
+  sessionStorage.setItem('topic', this.roleService.topic)
+  this.router.navigate(['topic'])
+
 }
 
 }

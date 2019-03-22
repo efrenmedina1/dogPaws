@@ -211,10 +211,14 @@
             <h2> {{profile.name}}'s Topics </h2>
           </div>
           <div class="four3">
-          <div  class="table"  *ngFor="let comment of comment ">
-             
-              <div class="comment"> 
-                <p>{{ comment.description }}</p>
+          <div  class="table1"   *ngFor="let comment of comment ">
+            
+              <div class="commentid"  id="{{comment.id}}" (click)="goTopic($event)" >               
+                  <p id="{{comment.id}}">&nbsp; ID: {{ comment.id }}</p>
+                </div>
+
+              <div class="comment"  id="{{comment.id}}" (click)="goTopic($event)" >               
+                <p id="{{comment.id}}" >&nbsp;{{ comment.description }}</p>
               </div>
             
                 <div *ngIf="roleService.adminRole"  > 
@@ -222,7 +226,7 @@
                   <div class="input">
                     <input type="submit" value="Delete">
                   </div>
-                </form>
+                </form> 
                 <form (submit)="update($event)">
                   <div class="input">
                     <input type="submit" value="Update">

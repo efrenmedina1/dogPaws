@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RoleService } from "../role.service"
 import { HttpClient } from '@angular/common/http';
 import { APIURL } from '../../environments/environment.prod';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router' 
 
 
 @Component({

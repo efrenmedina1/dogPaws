@@ -47,14 +47,7 @@
       padding-right: 5vw;
   }
 
-.table{
-    display: table;
-    width: 100%;
-    left: 0;
-    top: 0;
-    margin-bottom: 4vw;
-    
-}
+
 .table{
     display: table;
     width: 100%;
@@ -114,9 +107,36 @@
     width: 30%;
     float: left;
     display: table-cell;
-    background-color:  rgba(104,154,153,1);
     padding: 1%;
     margin-left:  4.5%;
+}
+.table1{
+    display: table;
+    width: 100%;
+    
+    
+}
+.commentid{
+    background-color:  rgba(104,154,153,1);
+    color: white;
+    width: 20%;
+    float: left;
+    display: table-cell;
+    font-size: 125%;
+    margin-bottom: 1rem;
+}
+
+.comment{
+    background-color:  rgba( 144,145,137,1);
+    color: white;
+    width: 80%;
+    float: left;
+    display: table-cell;
+    font-size: 125%;
+}
+.comment:hover{
+    background-color:  rgba(144, 145, 137, 0.578);
+    cursor: pointer;
 }
 
 #box{
