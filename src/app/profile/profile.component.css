@@ -106,7 +106,6 @@
     width: 30%;
     float: left;
     display: table-cell;
-    background-color:  white;
     padding: 1%;
     margin-left:  4.5%;
 }
@@ -124,6 +123,7 @@
  box-shadow: 0 2vw 4vw 0 rgba(104,154,153,1), 0 2vw 4vw 0 rgba(104,154,153,1);
  margin-bottom: 4vw;
  padding: 3%;
+ background-color: white;
 }
 
 #card{

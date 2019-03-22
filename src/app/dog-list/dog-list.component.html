@@ -51,7 +51,7 @@
         <div class="mainflip">
           <div class="frontside">
             <div class="card" id="card" style="width:20rem;">
-              <img class="card-img-top img- fluid" src="{{dog.picture}}" alt="card image">
+              <img class="img" src="{{dog.picture}}" alt="card image">
               <div class="card-body">
                 <h4 class="card-title text-center">Name: {{ dog.name }}</h4>
                 <!-- <p class="card-text">This is basic card with image on top, title, description and button.</p> -->
@@ -80,7 +80,9 @@
                 }
               </style>
               <div>
-                  <a class="link" href="mailto:redRocket2019@outlook.com">Contact Info</a>
+                  <div class="input3" >
+                    <br>
+                      <input id="{{dog.userId}}" (click)="profileTrue($event)" class="dogButton" type="submit" value="🐾Contact Owner🐾">
               </div>
 
               <!-- <div class="card-header">
@@ -106,3 +108,26 @@
   </div>
 
 </div>
+
+<div class="modals"  *ngIf="profile" >
+    <div class="headerProfile" > &nbsp;&nbsp; Profile</div>  <div class="closes" (click)="profileFalse($event)" > Close </div>
+
+    <div class="profilePic" > 
+      <img src="{{ Profile[0].picture }}" class="imgProfile" /> 
+    </div>
+    
+    <div class="profileAbout" > 
+      <p> Name: {{ Profile[0].name}}</p>
+      <p> ID: {{ Profile[0].userId}}</p>
+      <p> Age: {{ Profile[0].age}}</p>
+    </div> 
+
+    <div class="profileContact" > 
+        <p> Email: {{ Profile[0].email}}</p>
+        <p> Phone: {{ Profile[0].phone}}</p>
+        <p> About: {{ Profile[0].about}}</p>
+      </div> 
+
+     
+
+  </div>

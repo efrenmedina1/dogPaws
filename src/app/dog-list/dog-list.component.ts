@@ -11,6 +11,8 @@ import { APIURL } from '../../environments/environment.prod';
 export class DogListComponent implements OnInit {
 
 public dog = [];
+profile = false;
+public Profile = {};
 
   constructor(private roleService: RoleService, private http: HttpClient) { }
 
@@ -29,4 +31,40 @@ public dog = [];
   getDogs() : any {
     return this.http.get(`${APIURL}/doglist/`);
 }
+
+profileTrue(e) {
+  e.preventDefault(); 
+  let id = e.target.id;
+  console.log(id)
+  fetch(`${APIURL}/profilelist/${id}`,{
+    method: 'GET',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': this.roleService.token
+    })
+  })
+  .then(response =>{  response.json()
+  .then(data => {this.Profile = data})
+  .then(data => console.log(this.Profile))
+})
+
+  this.profile = true
+  
 }
+
+profileFalse(e) {
+  e.preventDefault(); 
+
+  this.profile = false;
+  this.Profile = '';
+  console.log(this.Profile)
+  
+}
+
+
+
+
+}
+
+
+

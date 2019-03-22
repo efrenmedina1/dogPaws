@@ -129,10 +129,10 @@
       </div>
 
 
-      <div class="four2">
+      <div class="four2" >
           <h2> {{profile.name}}'s Dogs </h2>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <div  *ngFor="let dog of dog"  >
+          <div class="dogCard" *ngFor="let dog of dog"  >
           <div id="box" class="box">
             <div class="container">
               <div class="row">
@@ -207,8 +207,10 @@
       </div>
 
 
-      <div class="four3">
-          <h2> {{profile.name}}'s Comments </h2>
+          <div class="four2">
+            <h2> {{profile.name}}'s Topics </h2>
+          </div>
+          <div class="four3">
           <div  class="table"  *ngFor="let comment of comment ">
              
               <div class="comment"> 
