@@ -48,7 +48,8 @@ export class AuthComponent implements OnInit {
 loginUser(e) {
   e.preventDefault(); 
   console.log(e);
-  var username = e.target.elements[0].value;
+  var user = e.target.elements[0].value;
+  var username = user.toLowerCase();
   var password = e.target.elements[1].value;
 console.log(username, password);
 fetch(`${APIURL}/user/login`, {
