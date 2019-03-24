@@ -51,7 +51,7 @@
         <div class="mainflip">
           <div class="frontside">
             <div class="card" id="card" style="width:20rem;">
-              <img class="img" src="{{dog.picture}}" alt="card image">
+              <img class="img" src="{{dog.picture}}"  onerror="this.src='../../assets/img/stock/dl_black.png'">
               <div class="card-body">
                 <h4 class="card-title text-center">Name: {{ dog.name }}</h4>
                 <!-- <p class="card-text">This is basic card with image on top, title, description and button.</p> -->

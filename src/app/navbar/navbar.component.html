@@ -49,7 +49,7 @@
           <p *ngIf="roleService.noRole">Login</p>
       </div>
       <div class="four" (click)="logout($event)" >
-        <p>Logout</p>
+        <p *ngIf="roleService.userRole" >Logout</p>
     </div>
 
   </div>

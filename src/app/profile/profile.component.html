@@ -80,17 +80,24 @@
     </div>
 
     <div class="four">
+        <div  class="table1" >
       <p> Name:  {{ profile.name }} </p>
       <p> Age:  {{ profile.age }} </p>
       <p> Email:  {{ profile.email }} </p>
       <p> Phone:  {{ profile.phone }} </p>
       <p> Address:  {{ profile.address }} </p>
+    </div>
 
-      <form (submit)="deleteProfile($event)"> 
-          <input type="submit" value="🗑️Profile" id="{{ profile.id }}" >
-        </form>
+    <div  class="tableCenter" (click)="dogCreateModalOpen($event)" >
+        <h3>Create a new Dog</h3>
+    </div>
+
+    <div  class="tableCenter" (click)="profileUpdateModalOpen($event)" >
+        <h3>Update Profile</h3>
+    </div>
+      
         
-          <form (submit)="createDog($event)">
+          <!-- <form (submit)="createDog($event)">
               <div class="input"> 
                 <h3>Create a new Dog</h3>
                 <br>
@@ -124,7 +131,7 @@
               <div class="input">
                 <input type="submit" value="Create Dog">
               </div>
-            </form>
+            </form> -->
           </div>
         <div>
      
@@ -134,8 +141,24 @@
 
 
       <div class="four2" >
-          <h2> {{profile.name}}'s Dogs </h2>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <h2 class="listHeaders" > {{profile.name}}'s Dogs </h2>
+
+          <div class="four3">
+              <div  class="table1"   *ngFor="let dog of dog ">
+                
+                  <div class="commentid"  id="{{dog.id}}" (click)="dogUpdateModalOpen($event)" >               
+                      <p id="{{dog.id}}">&nbsp; ID: {{ dog.id }}</p>
+                    </div>
+    
+                  <div class="comment"  id="{{dog.id}}" (click)="dogUpdateModalOpen($event)" >               
+                    <p id="{{dog.id}}" >&nbsp;{{ dog.name }}</p>
+                  </div>
+                
+    
+                  </div>
+           </div> 
+
+          <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <div class="dogCard" *ngFor="let dog of dog"  >
           <div id="box" class="box">
             <div class="container">
@@ -208,42 +231,34 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
       </div>
 
 
           <div class="four2">
-            <h2> {{profile.name}}'s Topics </h2>
-          </div>
-          <div class="four3">
-          <div  class="table1"   *ngFor="let comment of comment ">
-            
-              <div class="commentid"  id="{{comment.id}}" (click)="goTopic($event)" >               
-                  <p id="{{comment.id}}">&nbsp; ID: {{ comment.id }}</p>
-                </div>
+            <h2 class="listHeaders" > {{profile.name}}'s Topics </h2>
 
-              <div class="comment"  id="{{comment.id}}" (click)="goTopic($event)" >               
-                <p id="{{comment.id}}" >&nbsp;{{ comment.description }}</p>
-              </div>
-            
-                <div *ngIf="roleService.adminRole"  > 
-                <form (submit)="delete($event)">
-                  <div class="input">
-                    <input type="submit" value="Delete">
-                  </div>
-                </form> 
-                <form (submit)="update($event)">
-                  <div class="input">
-                    <input type="submit" value="Update">
-                  </div>
-                </form>
-              </div>
-              </div>
-       </div>
+            <div class="four3">
+                <div  class="table1"   *ngFor="let comment of comment ">
+                  
+                    <div class="commentid"  id="{{comment.id}}" (click)="goTopic($event)" >               
+                        <p id="{{comment.id}}">&nbsp; ID: {{ comment.id }}</p>
+                      </div>
+      
+                    <div class="comment"  id="{{comment.id}}" (click)="goTopic($event)" >               
+                      <p id="{{comment.id}}" >&nbsp;{{ comment.description }}</p>
+                    </div>
+                  
+      
+                    </div>
+             </div> 
+          </div>
+      
+       
 
     </div>
 
-    <div  class="table"  *ngFor="let profile of profile ">
+    <!-- <div  class="table"  *ngFor="let profile of profile ">
         <div *ngIf="roleService.userRole" >  
             <form class="my-form" (submit)="profileUpdate($event)">
            
@@ -303,13 +318,219 @@
           
         </form>
 
-           
+        <form (submit)="deleteProfile($event)"> 
+            <input type="submit" value="🗑️Profile" id="{{ profile.id }}" >
+          </form>
               
             </div>
-    </div>
+    </div> -->
 
    
 
     <div *ngIf="roleService.noRole" > 
       <app-auth></app-auth>
     </div>
+
+
+    <div class="modals"  *ngIf="dogCreateModal" >
+        <div class="headerModal" > &nbsp;&nbsp;&nbsp;&nbsp; Add Your Dog</div>  <div class="closes" (click)="dogCreateModalClose($event)" > Close </div>
+          <div class="bodyModal"> 
+        <form (submit)="createDog($event)">
+            <div class="input"> 
+              <h3>Create a new Dog</h3>
+              <br>
+              <div class="input">
+                <label>Breed</label>
+                <input type="breed">
+              </div>
+              <div class="input">
+                <label>Name</label>
+                <input type="name">
+              </div>
+              <div class="input">
+                  <label>Age</label>
+                  <input type="age">
+                </div>
+              <div class="input">
+                <label>Picture URL</label>
+                <input type="picture">
+              </div>
+              
+              <textarea   
+                class="commentBox" 
+                placeholder="Please put a description"
+                required
+                data-validation-required-message="Please put a description"
+                name="message"
+                maxlength="250"
+                       ></textarea>
+            </div>
+      
+            <div class="input">
+              <input type="submit" value="Create Dog">
+            </div>
+          </form>
+
+         
+        </div>
+      </div>
+
+      <div class="modals2"  *ngIf="profileUpdateModal" >
+          <div class="headerModal" > &nbsp;&nbsp; Profile</div>  <div class="closes" (click)="profileUpdateModalClose($event)" > Close </div>
+  
+          
+          <div  class="table1"  *ngFor="let profile of profile ">
+              <div *ngIf="roleService.userRole" >  
+                  <form class="my-form" (submit)="profileUpdate($event)">
+                 
+                      <mat-toolbar>
+                        <h3>Update your Profile</h3>
+                      </mat-toolbar>
+                      <mat-card class="my-card">
+                         <mat-card-content>
+                                <div class="label1" >
+                                  <label class="input" >Name:</label>
+                                  <input class="input" matInput   name="name"  type="name" value="{{profile.name}}" >
+                                </div>
+                                <div class="label2"  >
+                                  <label class="input" >Age:</label>
+                                  <input class="input"  matInput   name="age"  type="age" style="width: 5rem;" value="{{profile.age}}" >
+                                </div>
+                                <div class="label7">&nbsp;</div>
+                                <div class="label3" >
+                                  <label class="input" >Picture:</label>                              
+                                  <input class="input"  matInput   name="url"  type="url" style="width: 40rem;" value="{{profile.picture}}" >
+                                </div>
+                                <div class="label7">&nbsp;</div>
+                                <div class="label4" >
+                                  <label class="input" >Email:</label>
+                                  <input class="input" matInput   name="email"  type="email" style="width: 20rem;" value="{{profile.email}}" >
+                                </div>
+                                <div class="label5" >
+                                  <label class="input" >Phone:</label>
+                                  <input class="input" matInput   name="phone"  type="phone" value="{{profile.phone}}" >
+                                </div>
+                                <div class="label7">&nbsp;</div>
+                                <div class="label6" >
+                                  <label class="input" >Address:</label>
+                                  <input class="input" matInput   name="address"  type="address" style="width: 40rem;" value="{{profile.address}}" >
+                                </div>
+                                
+                                <div class="labeldescription" >
+                                    <label class="input" >About:</label>
+                                <textarea   
+                                class="commentBox" 
+                                placeholder="Please put a description"
+                                required
+                                data-validation-required-message="Please put a description"
+                                name="message"
+                                maxlength="250"
+                                value="{{profile.about}}"
+                                       ></textarea>
+                               </div>
+                                
+                              
+                                  
+                                  
+                         </mat-card-content>
+                         
+                    
+                </mat-card>
+                <br>
+                 &nbsp; &nbsp; <button class="dogButton" id="{{profile.id}}" mat-raised-button (click)="submit" color="gray">Update Profile</button>
+                
+              </form>
+              <div class="trashDiv" > 
+              <form (submit)="deleteProfile($event)"> 
+                  &nbsp; &nbsp;  <input class="dogButton" type="submit" value="🗑️Profile" id="{{ profile.id }}" >  &nbsp; &nbsp;&nbsp; &nbsp;
+                </form>
+              </div>
+                    
+                  </div>
+          </div>
+           
+      
+        </div>
+
+        <div class="modals"  *ngIf="dogUpdateModal" >
+            <div class="headerModal" > &nbsp;&nbsp; Profile</div>  <div class="closes" (click)="dogUpdateModalClose($event)" > Close </div>
+            <div class="bodyModal">
+    
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+          <div class="dogCard"  >
+          <!-- <div id="box" class="box"> -->
+            <!-- <div class="container">
+              <div class="row"> -->
+          
+                
+          
+                  <div  >
+                     
+          
+                  
+
+                      
+                        <form (submit)="dogUpdate($event)">
+                          <div class="table1"> 
+                            <div class="label1">
+                                <img class="imgDog" src="{{dogActive.picture}}"
+                                  alt="card image">
+                              </div>
+                            <div class="label1"> 
+                                  <div class="label3"> 
+                                    <h3>Update a new Dog</h3>
+                                    <br>
+                                    <div class="label3">
+                                      <label>Breed</label>
+                                      <input type="breed" value="{{dogActive.breed}}" >
+                                    </div>
+                                    <div class="label3">
+                                      <label>Name</label>
+                                      <input type="name" value="{{dogActive.name}}" >
+                                    </div>
+                                    <div class="label3">
+                                        <label>Age</label>
+                                        <input type="age" value="{{dogActive.age}}" >
+                                      </div>
+                              </div>
+                            </div>
+                            <div class="table1"> 
+                              <div class="label">
+                                <br>
+                                <label>Picture URL</label>
+                                <input type="picture" style="width: 27rem;" value="{{dogActive.picture}}" >
+                              </div>
+                              
+                              <textarea   
+                                class="commentBox" 
+                                placeholder="Please put a description"
+                                required
+                                data-validation-required-message="Please put a description"
+                                name="message"
+                                maxlength="250"
+                                value="{{dogActive.description}}"   ></textarea>
+                            </div>
+                      
+                            <div class="input">
+                              <input class="dogButton" id=" {{dogActive.id}} " type="submit" value="Update Dog">
+                            </div>
+                          </div>
+                          </form>
+                          <div class="trashDiv" > 
+                          <form (submit)="deleteDog($event)"> 
+                              &nbsp;
+                                <input class="dogButton" type="submit" value="🗑️Dog" id="{{ dogActive.id }}" >
+                              </form>
+                          </div>
+                 
+                  </div>
+                <!-- </div> -->
+              <!-- </div>
+            </div> -->
+          </div>
+          </div>
+    
+             
+        
+          </div>

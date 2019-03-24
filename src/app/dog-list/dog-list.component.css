@@ -160,3 +160,9 @@ img{
         display: table-cell;
         height: 17.5rem;
     }
+
+    img:before {
+        content: ' ';
+        display: block;
+        background-image: url(../../assets/img/stock/dl_black.png);
+    }

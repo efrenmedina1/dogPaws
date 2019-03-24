@@ -5,7 +5,7 @@
 
   .my-card{
     
-    padding: 5%;
+    padding: 0.5rem;
   }
    
   .full-width {
@@ -13,19 +13,19 @@
   }
 
   .label1{
-      width: 20%;
+      width: 50%;
       float: left;
   }
   .label2{
-    width: 15%;
+    width: 25%;
     float: left;
 }
 .label3{
-    width: 60%;
+    width: 95%;
     float: left;
 }
 .label4{
-    width: 40%;
+    width: 50%;
     float: left;
 }
 .label5{
@@ -33,12 +33,16 @@
     float: left;
 }
 .label6{
-    width: 80%;
+    width: 95%;
     float: left;
 }
 .label7{
     width: 80%;
     float: left;
+}
+
+.trashDiv{
+    float: right;
 }
 
   .labeldescription{
@@ -58,7 +62,7 @@
 }
 
 .input{
-    float: right;
+    float: left;
 }
 
 .img{
@@ -93,6 +97,8 @@
     display: table-cell;
     background-color:  rgba(104,154,153,1);
     padding: 1%;
+    color: white;
+    font-size: 1.5rem;
 }
 
 .four2{
@@ -101,21 +107,46 @@
     display: table-cell;
     padding: 1%;
     margin-left:  4.5%;
+    
 }
 
 .four3{
-    width: 30%;
+    width: 100%;
     float: left;
     display: table-cell;
-    padding: 1%;
-    margin-left:  4.5%;
 }
 .table1{
     display: table;
     width: 100%;
+   
     
     
 }
+
+.tableCenter{
+    display: table;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(255, 106, 6);
+    margin-bottom: 20px;
+    border-radius: 1rem;
+    box-shadow: 0 1vw 2vw 0 rgba(0, 0, 0, 0.497);
+
+
+}
+
+.tableCenter:hover{
+    display: table;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(243, 158, 101);
+    margin-bottom: 20px;
+    border-radius: 1rem;
+    cursor: pointer;
+
+}
+
+
 .commentid{
     background-color:  rgba(104,154,153,1);
     color: white;
@@ -124,6 +155,7 @@
     display: table-cell;
     font-size: 125%;
     margin-bottom: 1rem;
+    border-radius: 1rem 0rem 0rem 1rem;
 }
 
 .comment{
@@ -133,10 +165,19 @@
     float: left;
     display: table-cell;
     font-size: 125%;
+    border-radius: 0rem 1rem 1rem 0rem;
 }
 .comment:hover{
-    background-color:  rgba(144, 145, 137, 0.578);
+    background-color:  rgb(108, 108, 104);
     cursor: pointer;
+}
+
+.listHeaders{
+    background-color: rgba(104,154,153,1);
+    text-align: center;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    color: white;
 }
 
 #box{
@@ -156,3 +197,73 @@
     height: 15vh;
 }
 
+.modals{
+    position: fixed;
+    width: 35rem;
+    height: 37rem;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 255, 255);
+    box-shadow: 0 2vw 4vw 0 rgba(0, 0, 0, 0.497), 0 2vw 4vw 0 rgba(0, 0, 0, 0.585);
+    border-radius: 2.5rem;
+    border: solid black 5px
+    
+  }
+
+  .modals2{
+    position: fixed;
+    width: 50rem;
+    height: 40rem;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 255, 255);
+    box-shadow: 0 2vw 4vw 0 rgba(0, 0, 0, 0.497), 0 2vw 4vw 0 rgba(0, 0, 0, 0.585);
+    border-radius: 2.5rem;
+    border: solid black 5px
+    
+  }
+
+  .headerModal{
+    width: 80%;
+    float: left;
+    display: table-cell;
+    background-color:  rgba(104,154,153,1);
+    color: white;
+    font-size: 1.5rem;
+    height: 3rem;
+    border-radius: 2.2rem 0rem 0rem 0rem;
+    
+
+}
+
+.bodyModal{
+    padding: 1rem;
+}
+
+.closes{
+    width: 20%;
+    float: left;
+    display: table-cell;
+    background-color:  red;
+    font-size: 1.5rem;
+    height: 3rem;
+    text-align: center;
+    color: white;
+    border-radius: 0 2.2rem 0rem 0rem;
+    
+}
+
+.closes:hover{
+    cursor: pointer;
+    background-color:  rgba(255, 0, 0, 0.571);
+}
+
+
+.imgDog{
+    height: 15rem;
+    width: 100%
+}

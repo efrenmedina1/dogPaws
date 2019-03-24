@@ -35,14 +35,31 @@ export class AuthComponent implements OnInit {
     'Content-Type': 'application/json'
   })
 })
-  .then(res => { if(res.status == 500) {
-    window.alert( "User already exist. Please choose another username to signup" );
-    console.log(res);
-  } else {
-    window.alert(`Welcome ${username} to our dog breeding and sale site. Please login in now to use the site's features`);
-    console.log(res);
-  } 
-  })
+.then(
+  (response) => response.json()
+  .catch((err) => console.log(err))
+)
+
+.then((json) => {
+if(json == undefined) {
+  console.log("user alrdy exist")
+  window.alert( "User already exist. Please choose another username to signup" );
+} else {
+  console.log(json.user)
+  this.roleService.role = json.user.role
+  this.roleService.username = json.user.username
+  this.roleService.token = json.sessionToken
+
+  // this.router.navigate(['home'])
+  window.alert("Logged in");
+} 
+}
+)
+.then(response =>  sessionStorage.setItem('role', this.roleService.role) )
+.then(response =>  sessionStorage.setItem('username', this.roleService.username) )
+.then(response =>  sessionStorage.setItem('token', this.roleService.token) )
+.then(response =>  this.ngOnInit() )
+.then(response =>  this.router.navigate(['profile']) )
 }
 
 loginUser(e) {
@@ -98,6 +115,7 @@ headers: new Headers({
 .then(response =>  sessionStorage.setItem('username', this.roleService.username) )
 .then(response =>  sessionStorage.setItem('token', this.roleService.token) )
 .then(response =>  this.ngOnInit() )
+.then(response =>  this.router.navigate(['profile']) )
 // .then(response =>  window.location.reload() )
 }
 

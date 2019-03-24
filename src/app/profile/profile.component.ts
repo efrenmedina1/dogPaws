@@ -16,6 +16,10 @@ public dog = [];
 public comment = [];
 public profileTrue = true;
 public profileFalse = false;
+dogCreateModal = false;
+profileUpdateModal = false;
+dogUpdateModal = false;
+public dogActive = {};
 
 
   constructor(public roleService: RoleService, private http: HttpClient, private router: Router) { }
@@ -32,8 +36,11 @@ public profileFalse = false;
     //   );
       // this.getProfilelength()
 
-      this.getDogs()
-      this.getComments()
+      this.getDogs();
+      this.getComments();
+      this.dogCreateModal = false;
+      this.profileUpdateModal = false;
+      this.dogUpdateModal = false;
 
     
   }
@@ -272,7 +279,9 @@ dogUpdate = (e) => {
     })
   })
   .then(response => console.log(response))
+  .then((res) => window.alert("Updated Dog") )
   .then((res) => this.ngOnInit() )
+  
   
 }
 
@@ -324,6 +333,74 @@ goTopic(e) {
   sessionStorage.setItem('topic', this.roleService.topic)
   this.router.navigate(['topic'])
 
+}
+
+modalOpen(e) {
+  e.preventDefault(); 
+  console.log("modal Open")
+  
+}
+
+modalClose(e) {
+  e.preventDefault(); 
+
+  console.log("modal Close")
+  
+}
+
+dogCreateModalOpen(e) {
+  e.preventDefault(); 
+  console.log("modal Open")
+  this.dogCreateModal = true;
+  
+}
+
+dogCreateModalClose(e) {
+  e.preventDefault(); 
+  console.log("modal Close")
+  this.dogCreateModal = false;
+  
+}
+
+profileUpdateModalOpen(e) {
+  e.preventDefault(); 
+  console.log("modal Open")
+  this.profileUpdateModal = true;
+  
+}
+
+profileUpdateModalClose(e) {
+  e.preventDefault(); 
+  console.log("modal Close")
+  this.profileUpdateModal = false;
+  
+}
+
+dogUpdateModalOpen(e) {
+  e.preventDefault(); 
+  console.log("modal Open")
+  let id = e.target.id;
+  console.log(id)
+  fetch(`${APIURL}/dogs/${id}`,{
+    method: 'GET',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': this.roleService.token
+    })
+  })
+  .then(response =>{  response.json()
+  .then(data => {this.dogActive = data})
+  .then(data => console.log(this.dogActive))
+})
+  this.dogUpdateModal = true;
+  
+}
+
+dogUpdateModalClose(e) {
+  e.preventDefault(); 
+  console.log("modal Close")
+  this.dogUpdateModal = false;
+  
 }
 
 }
