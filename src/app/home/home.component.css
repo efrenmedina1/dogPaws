@@ -1,18 +1,11 @@
 .jumbotron {
-    background-color: white;
-    /* background-image: url('../../assets/dl.png'); */
-    height: 100vh;
-   width: 100vw;
-   background-size: contain;
-   background-repeat: no-repeat;
-   background-position: center center;
-   background-attachment: fixed;
    margin: 0;
    padding: 0;
  }
  
  .container{
      text-align: center
+     
  }
  
  #logo {

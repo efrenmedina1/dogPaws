@@ -1,25 +1,26 @@
+<div class="table" > 
+  <div class="authHeader" >
+  <h2>Please login or sign up to use the sites member functions</h2>
+</div>
+</div>
 
-    <mat-toolbar>
-      <span>Login/Sign Up</span>
-    </mat-toolbar>
-    <mat-card class="my-card">
-      <mat-card-content>
+<div class="table2" > 
 
         <form class="my-form" (submit)="signUp($event)">
        
             <mat-toolbar>
-              <span>Sign Up</span>
+              <h2><b>Sign Up</b></h2>
             </mat-toolbar>
             <mat-card class="my-card">
                <mat-card-content>
             
                        <label>Username</label>
-                        <input  matInput   name="Username">
+                        <input  matInput   name="Username" minlength="6" required >
                     <br> 
                     <br> 
                         <label>Password</label>
                         
-                        <input  matInput name="password" type="password" >
+                        <input  matInput name="password" type="password" minlength="6" required >
                </mat-card-content>
                <mat-card-actions>
                   <button mat-raised-button  color="gray">Sign Up</button>
@@ -28,11 +29,11 @@
       </mat-card>
       
     </form>
-<br>
+
     <form class="my-form" (submit)="loginUser($event)">
        
         <mat-toolbar>
-          <span>Login</span>
+            <h2><b>Login</b></h2>
         </mat-toolbar>
         <mat-card class="my-card">
            <mat-card-content>
@@ -52,3 +53,5 @@
   </mat-card> 
   
 </form>
+
+</div>

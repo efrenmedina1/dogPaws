@@ -1,9 +1,14 @@
+<div *ngIf="roleService.noRole" > 
+    <app-auth></app-auth>
+  </div>
+
 <div><h2>Topic {{this.roleService.topic}} </h2></div>
 
     <div  class="table"  *ngFor="let comment of comment ">
         <div id="{{comment.userId}}" (click)="profileTrue($event)" class="two" > 
       
-          <p id="{{comment.userId}}" > Click for user Profile</p>
+          <p id="{{comment.userId}}" >Posted by: </p>
+          <p id="{{comment.userId}}" > <b id="{{comment.userId}}" >  {{comment.username}} </b></p>
           <p id="{{comment.userId}}" >User ID: {{comment.userId}}</p>
           
         </div> 
@@ -19,7 +24,7 @@
             </div>
           </form>
           <!-- <form (submit)="update($event)">
-            <div class="input">
+            <div class="input"> 
               <input type="submit" value="Update">
             </div>
           </form> -->
@@ -29,9 +34,9 @@
 
        
 
-        <div class="table" *ngIf="roleService.userRole"  > 
+        <div  *ngIf="roleService.userRole"  > 
             <form (submit)="createPost($event)">
-              
+              <div class="table" >
                  <div class="input1" >
                   <label>Create Your Post</label>
                 </div>
@@ -46,9 +51,9 @@
                     maxlength="250"
                            ></textarea>
                 </div>
-          
-                <div>
-                  <input type="submit" value="Post Comment">
+              </div>
+                <div class="input3" >
+                  <input class="dogButton" type="submit" value="🐾Post Comment🐾">
                 </div>
               </form>
             </div>
@@ -58,19 +63,19 @@
                 <div class="headerProfile" > &nbsp;&nbsp; Profile</div>  <div class="closes" (click)="profileFalse($event)" > Close </div>
 
                 <div class="profilePic" > 
-                  <img src="{{ Profile.picture }}" class="img" /> 
+                  <img src="{{ Profile[0].picture }}" class="img" /> 
                 </div>
                 
                 <div class="profileAbout" > 
-                  <p> Name: {{ Profile.name}}</p>
-                  <p> ID: {{ Profile.userId}}</p>
-                  <p> Age: {{ Profile.age}}</p>
+                  <p> Name: {{ Profile[0].name}}</p>
+                  <p> ID: {{ Profile[0].userId}}</p>
+                  <p> Age: {{ Profile[0].age}}</p>
                 </div> 
 
                 <div class="profileContact" > 
-                    <p> Email: {{ Profile.email}}</p>
-                    <p> Phone: {{ Profile.phone}}</p>
-                    <p> About: {{ Profile.about}}</p>
+                    <p> Email: {{ Profile[0].email}}</p>
+                    <p> Phone: {{ Profile[0].phone}}</p>
+                    <p> About: {{ Profile[0].about}}</p>
                   </div> 
 
                  
