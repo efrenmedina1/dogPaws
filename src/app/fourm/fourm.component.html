@@ -1,5 +1,9 @@
 <h1>Dog Talk</h1>
-
+<div class="table" > 
+    <div class="fourmHeader" >
+    <h2>Welcome to the Fourm</h2>
+  </div>
+  </div>
 
     <div *ngIf="roleService.userRole"  > 
     <form (submit)="createPost($event)">
@@ -17,6 +21,7 @@
             name="message"
             minlength=20
             maxlength=80
+            
            
                    ></textarea>
         </div>

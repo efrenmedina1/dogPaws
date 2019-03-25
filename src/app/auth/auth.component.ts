@@ -22,6 +22,7 @@ export class AuthComponent implements OnInit {
     var username = user.toLowerCase();
     var password = e.target.elements[1].value;
   console.log(username, password);
+  if(username.length > 5 && password.length > 5) {
   fetch(`${APIURL}/user`, {
   method: 'POST',
   body: JSON.stringify({
@@ -50,7 +51,7 @@ if(json == undefined) {
   this.roleService.username = json.user.username
   this.roleService.token = json.sessionToken
 
-  // this.router.navigate(['home'])
+  this.router.navigate(['home'])
   window.alert("Logged in");
 } 
 }
@@ -60,6 +61,9 @@ if(json == undefined) {
 .then(response =>  sessionStorage.setItem('token', this.roleService.token) )
 .then(response =>  this.ngOnInit() )
 .then(response =>  this.router.navigate(['profile']) )
+} else{
+  window.alert("Username and password must be longer then 5 characters");
+}
 }
 
 loginUser(e) {
@@ -69,6 +73,7 @@ loginUser(e) {
   var username = user.toLowerCase();
   var password = e.target.elements[1].value;
 console.log(username, password);
+
 fetch(`${APIURL}/user/login`, {
 method: 'POST',
 body: JSON.stringify(
@@ -87,7 +92,7 @@ headers: new Headers({
 .then(response =>  response.json() )
 .then(json =>  { 
   if(json.error == "failed to authenticate") {
-  window.alert( "User does not exisit. Please sign up" );
+  window.alert( "User does not exist. Please sign up" );
   console.log(json);
 } else if(json.error == "You failed to login") {
   window.alert( "Incorrect Password. Contact admin to reset password" );
@@ -117,6 +122,8 @@ headers: new Headers({
 .then(response =>  this.ngOnInit() )
 .then(response =>  this.router.navigate(['profile']) )
 // .then(response =>  window.location.reload() )
+
+
 }
 
 

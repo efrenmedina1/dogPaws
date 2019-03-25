@@ -50,7 +50,7 @@ export class TopicComponent implements OnInit {
     let comment = e.target.elements[0].value;
     console.log(comment);
     console.log(this.roleService.token);
-
+    if(comment.length > 2) {
     fetch(`${APIURL}/reply/`, {
       method: 'POST',
       body: JSON.stringify(
@@ -67,7 +67,11 @@ export class TopicComponent implements OnInit {
         'Authorization': this.roleService.token
       })
     })
+    .then((res) => e.target.elements[0].value = "" )
     .then((res) => this.ngOnInit() )
+  } else{
+    window.alert("Please input a comment");
+  }
   }
 
 

@@ -17,6 +17,6 @@
   }
 
   .dogButton:hover{
-    background-color: rgba(104, 154, 153, 0.537);
+    background-color: rgb(82, 122, 121);
     cursor: pointer;
   }
