@@ -187,15 +187,7 @@
   </form>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-<div *ngFor="let dog of dog">
 
-
-</div>
-<br>
-
-
-
-<br>
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 <!-- <div class="box"> -->
 <div class="container">
@@ -237,7 +229,7 @@
       <div id="list" class="image-flip" ontouchstart="this.classList.toggle('hover');">
         <div class="mainflip">
           <div class="frontside">
-            <div class="card" id="card" style="width:20rem;">
+            <div class="card" id="card" >
               <img class="img" src="{{dog.picture}}"  onerror="this.src='../../assets/img/stock/dl_black.png'">
               <div class="card-body">
                 <h4 class="card-title text-center">Name: {{ dog.name }}</h4>
@@ -249,7 +241,7 @@
             </div>
           </div>
           <div class="backside" >
-            <div class="card"  id="card" style="width:20rem; text-align: center; background-color: rgb(90, 89, 89)" >
+            <div class="card"  id="card"    >
 
               <div class="text">
                 <h2>About</h2>
@@ -269,7 +261,7 @@
               <div>
                   <div class="input3" >
                     <br>
-                      <input id="{{dog.userId}}" (click)="profileTrue($event)" class="dogButton" type="submit" value="🐾Contact Owner🐾">
+                      <input id="{{dog.userId}}" (click)="profileTrue($event)" class="dogButton" type="submit" value="🐾Contact🐾">
               </div>
 
               <!-- <div class="card-header">

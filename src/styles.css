@@ -29,3 +29,13 @@
     border: 0px;
     font-size: 1rem;
   }
+
+  @media only screen and (max-width: 800px) {
+    .dogButton{
+      font-size: 1rem;
+    }
+
+    .dogInput{
+      font-size: 0.9rem;
+    }
+  }

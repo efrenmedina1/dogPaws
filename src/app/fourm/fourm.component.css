@@ -64,7 +64,7 @@
     height: 2.7rem;
 }
 .input3{
-    width: 90%;
+    width: 100%;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -83,7 +83,7 @@
     background-color:  rgba( 144,145,137,1);
     color: white;
     font-size: 1.5rem;
-    height: 2.5rem;
+    height: 2.6rem;
     text-align: center;
     font-weight:bold;
 
@@ -95,7 +95,7 @@
     display: table-cell;
     background-color:  rgba(104,154,153,1);
     font-size: 1.5rem;
-    height: 2.5rem;
+    height: 2.6rem;
     text-align: center;
 }
 
@@ -116,4 +116,76 @@
     display: table-cell;
   }
 
- 
+  
+
+  @media only screen and (max-width: 1450px) {
+    .three{
+        width: 70%;
+        font-size: 1.2rem;
+    
+    }
+
+    .table{
+        display: table;
+        width: 90%;
+        left: 0;
+        top: 0;
+        margin-bottom: 4vh;
+        margin-left: 4vw;
+        margin-right: 4vw;
+        box-shadow: 0 1vw 2vw 0 rgba(0, 0, 0, 0.497);
+        border-radius: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 1450px) {
+    .two{
+
+        font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+    .two{
+
+        font-size: 1.1rem;
+  }
+
+  .three{
+    width: 70%;
+    font-size: 1.1rem;
+
+}
+.commentBox{
+    font-size: 1.2rem;
+    
+}
+}
+
+@media only screen and (max-width: 1000px) {
+    .two{
+
+        font-size: 0.9rem;
+  }
+
+  .three{
+    width: 70%;
+    font-size: 0.9rem;
+
+}
+.commentBox{
+    font-size: 1rem;
+    
+}
+}
+
+@media only screen and (max-width: 800px) {
+    label{
+        font-size: 0.9rem;
+    }
+    .commentBox{
+        font-size: 0.9rem;
+        
+    }
+
+}

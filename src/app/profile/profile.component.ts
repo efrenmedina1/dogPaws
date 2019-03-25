@@ -403,4 +403,10 @@ dogUpdateModalClose(e) {
   
 }
 
+goHome(e) {
+  e.preventDefault(); 
+  this.router.navigate(['home'])
+
+}
+
 }

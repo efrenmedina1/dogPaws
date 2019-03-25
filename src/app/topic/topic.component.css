@@ -68,6 +68,7 @@
     color: white;
     font-size: 1.5rem;
     height: 10rem;
+    padding: 1rem;
     
 
 }
@@ -162,4 +163,116 @@
     float: left;
     display: table-cell;
     height: 17.5rem;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+
+@media only screen and (max-width: 1600px) {
+    .table{
+        width: 85%;
+   
+    }
+
+    p{
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .table{
+        width: 85%;
+   
+    }
+
+    p{
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .table{
+        width: 90%;
+   
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .table{
+        width: 95%;
+        font-size: 1rem;
+   
+    }
+
+    .three{
+        height: 11rem;
+        padding: 0.5rem;  
+    }
+    
+    .two{
+ 
+        height: 11rem;
+        padding: 0.5rem;
+       
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    p{
+        font-size: 1rem;
+    }
+    .table{
+        font-size: 0.9rem;
+   
+    }
+    label{
+        font-size: 0.9rem;
+    }
+    .commentBox{
+        font-size: 0.9rem;
+        
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    p{
+        font-size: 0.9rem;
+    }
+    .table{
+        font-size: 0.9rem;
+   
+    }
+    label{
+        font-size: 0.9rem;
+    }
+    .commentBox{
+        font-size: 0.9rem;
+        
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .three{
+        width: 75%;
+        height: 13rem;
+    }
+    .two{
+        width: 25%;
+        height: 13rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .three{
+        width: 75%;
+        height: 15rem;
+    }
+    .two{
+        width: 25%;
+        height: 15rem;
+    }
 }

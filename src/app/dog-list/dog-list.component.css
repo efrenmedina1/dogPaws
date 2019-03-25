@@ -22,7 +22,7 @@
 }
 
  .list {
-    height: 70vh;
+    height: 40rem;
     width: 30%;
     margin: 17px;
     color: rgb(255, 255, 255);
@@ -30,12 +30,14 @@
 }
 
 #card{
-    height: 65vh;
-    background-color: rgb(90, 89, 89)
+    height: 40rem;
+    background-color: rgb(90, 89, 89);
+    width: 20rem;
+    text-align: center;
 }
 
 img{
-    height: 30vh;
+    height: 20rem;
 }
 
 
@@ -183,4 +185,225 @@ img{
         content: ' ';
         display: block;
         background-image: url(../../assets/img/stock/dl_black.png);
+    }
+
+
+    @media only screen and (max-width: 1350px) {
+        .table1{
+            display: table;
+            width: 100%;
+            left: 0;
+            top: 0;
+            margin-top: 4vh;
+            margin-left: 4vw;
+            margin-right: 4vw;
+            border-radius: 1rem;
+            padding-left: 12rem;
+        }
+
+        .two{
+            width: 50%;
+            float: left;
+            display: table-cell;
+        }
+    }
+
+    @media only screen and (max-width: 1250px) {
+
+        #card{
+            height: 30rem;
+            width: 15rem;
+            background-color: rgb(90, 89, 89)
+        }
+        
+        img{
+            height: 15rem;
+        }
+
+        .list {
+            height: 30rem;
+            width: 27%;
+            margin: 17px;
+            color: rgb(255, 255, 255);
+        
+        }
+
+        .two{
+            width: 100%;
+            float: left;
+            display: table-cell;
+            margin-bottom: 1rem;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 1000px) {
+
+        #card{
+            height: 25rem;
+            width: 12rem;
+            background-color: rgb(90, 89, 89)
+        }
+        
+        img{
+            height: 12rem;
+        }
+
+        .list {
+            height: 25rem;
+            width: 27%;
+            margin: 17px;
+            color: rgb(255, 255, 255);
+        
+        }
+
+        .two{
+            width: 100%;
+            float: left;
+            display: table-cell;
+            margin-bottom: 1rem;
+        }
+
+        h4{
+            font-size: 1.2rem;
+        }
+
+    }
+
+    @media only screen and (max-width: 800px) {
+        .table1{
+            
+            padding-left: 5rem;
+        }
+        #card{
+            height: 30rem;
+            width: 15rem;
+            background-color: rgb(90, 89, 89)
+        }
+        
+        img{
+            height: 15rem;
+        }
+
+        .list {
+            height: 30rem;
+            width: 43%;
+            margin: 17px;
+            color: rgb(255, 255, 255);
+        
+        }
+
+        .two{
+            width: 100%;
+            float: left;
+            display: table-cell;
+            margin-bottom: 1rem;
+        }
+
+        h4{
+            font-size: 1.2rem;
+        }
+
+        .image-flip {
+            margin-bottom:200px;
+            width: 200px;
+            height: 200px;
+            
+            }
+
+    }
+
+    @media only screen and (max-width: 600px) {
+        .table1{
+            
+            padding-left: 1rem;
+        }
+        #card{
+            height: 25rem;
+            width: 12rem;
+            background-color: rgb(90, 89, 89)
+        }
+        
+        img{
+            height: 12rem;
+        }
+
+        .list {
+            height: 25rem;
+            width: 41%;
+            margin: 17px;
+            color: rgb(255, 255, 255);
+        
+        }
+
+        .two{
+            width: 100%;
+            float: left;
+            display: table-cell;
+            margin-bottom: 1rem;
+        }
+
+        h4{
+            font-size: 1.2rem;
+        }
+
+    }
+
+    @media only screen and (max-width: 600px) {
+        .table1{
+            
+            padding-left: 1rem;
+        }
+        #card{
+            height: 22rem;
+            width: 11rem;
+        }
+        
+        img{
+            height: 11rem;
+        }
+
+        .list {
+            height: 22rem;
+            width: 40%;
+        
+        }
+
+        h4{
+            font-size: 1.2rem;
+        }
+
+    }
+
+    @media only screen and (max-width: 400px) {
+        .table1{
+            
+           width: 90%
+        }
+        #card{
+            height: 18rem;
+            width: 9rem;
+        }
+        
+        img{
+            height: 9rem;
+        }
+
+        .list {
+            height: 18rem;
+            width: 40%;
+        
+        }
+
+        h4{
+            font-size: 1rem;
+        }
+        .image-flip {
+            margin-bottom:150px;
+            width: 150px;
+            height: 150px;
+            
+            }
+
     }

@@ -163,9 +163,10 @@
     width: 20%;
     float: left;
     display: table-cell;
-    font-size: 125%;
+    
     margin-bottom: 1rem;
     border-radius: 1rem 0rem 0rem 1rem;
+    text-align: center;
 }
 
 .comment{
@@ -176,6 +177,9 @@
     display: table-cell;
     font-size: 125%;
     border-radius: 0rem 1rem 1rem 0rem;
+}
+.commentText{
+    font-size: 1.5rem;
 }
 .comment:hover{
     background-color:  rgb(108, 108, 104);
@@ -214,7 +218,7 @@ label{
 .modals{
     position: fixed;
     width: 46rem;
-    height: 37rem;
+    height: 42rem;
     z-index: 15;
     top: 50%;
     left: 50%;
@@ -229,7 +233,7 @@ label{
   .modals2{
     position: fixed;
     width: 53rem;
-    height: 40rem;
+    height: 37rem;
     z-index: 15;
     top: 50%;
     left: 50%;
@@ -296,4 +300,238 @@ label{
 .imgDog{
     height: 15rem;
     width: 100%
+}
+
+#p1{
+    width: 15rem;   
+}
+#p2{
+    width: 5rem;   
+}
+#p3{
+    width: 40rem;   
+}
+#p4{
+    width: 20rem;   
+}
+#p5{
+    width: 15rem;   
+}
+#p6{
+    width: 40rem;   
+}
+
+
+
+@media only screen and (max-width: 1450px) {
+
+    .commentid{
+        background-color:  rgba(104,154,153,1);
+        color: white;
+        width: 20%;
+        height: 6rem;
+        float: left;
+        display: table-cell;
+        font-size: 125%;
+        margin-bottom: 1rem;
+        border-radius: 1rem 0rem 0rem 1rem;
+    }
+    
+    .comment{
+        background-color:  rgba( 144,145,137,1);
+        color: white;
+        width: 80%;
+        height: 6rem;
+        float: left;
+        display: table-cell;
+        font-size: 125%;
+        border-radius: 0rem 1rem 1rem 0rem;
+    }
+
+    .commentText{
+        font-size: 1.3rem;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .commentText{
+        font-size: 1.2rem;
+    }
+    .modals2{
+        height: 39rem;
+        
+      }
+}
+
+@media only screen and (max-width: 1000px) {
+    .commentText{
+        font-size: 0.9rem;
+    }
+    .modals2{
+        width: 45rem;
+        
+      }
+      .label7{
+        height: 0.3rem;
+    }
+
+    #p1{
+        width: 10rem;   
+    }
+    #p2{
+        width: 4rem;   
+    }
+    #p3{
+        width: 35rem;   
+    }
+    #p4{
+        width: 15rem;   
+    }
+    #p5{
+        width: 10rem;   
+    }
+    #p6{
+        width: 35rem;   
+    }
+    .commentBox{
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .commentText{
+        font-size: 0.8rem;
+    }
+ 
+    .modals{
+        width: 39rem;
+        
+      }
+    .modals2{
+        width: 35rem;
+        
+      }
+      #p1{
+        width: 10rem;   
+    }
+    #p2{
+        width: 4rem;   
+    }
+    #p3{
+        width: 30rem;   
+    }
+    #p4{
+        width: 15rem;   
+    }
+    #p5{
+        width: 10rem;   
+    }
+    #p6{
+        width: 30rem;   
+    }
+    .commentBox{
+        font-size: 0.8rem;
+    }
+
+    
+    @media only screen and (max-width: 600px) {
+        .commentText{
+            font-size: 0.8rem;
+        }
+     
+        .modals{
+            width: 25rem;
+            
+          }
+        .modals2{
+            width: 25rem;
+            
+          }
+          #p1{
+            width: 10rem;   
+        }
+        #p2{
+            width: 4rem;   
+        }
+        #p3{
+            width: 20rem;   
+        }
+        #p4{
+            width: 12rem;   
+        }
+        #p5{
+            width: 10rem;   
+        }
+        #p6{
+            width: 20rem;   
+        }
+        .commentBox{
+            font-size: 0.8rem;
+        }
+
+        #dogHide{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 500px) {
+        .commentText{
+            font-size: 1.2rem;
+        }
+        .two{
+            width: 100%;
+            border-radius: 1rem 1rem 0rem 0rem;
+        }
+
+        .img1{
+            border-radius: 1rem 1rem 0rem 0rem;
+        
+        }
+        .three{
+            width: 100%;
+            border-radius: 0rem 0rem 0rem 0rem;
+        }
+        .four{
+            width: 100%;
+            border-radius: 0rem 0rem 1rem 1rem;
+        }
+        .four2{
+            width: 45%;
+        }
+    }
+
+
+    @media only screen and (max-width: 400px) {
+       
+     
+        .modals{
+            width: 20rem;
+            
+          }
+        .modals2{
+            width: 20rem;
+            
+          }
+          #p1{
+            width: 8rem;   
+        }
+        #p2{
+            width: 4rem;   
+        }
+        #p3{
+            width: 18rem;   
+        }
+        #p4{
+            width: 10rem;   
+        }
+        #p5{
+            width: 9rem;   
+        }
+        #p6{
+            width: 18rem;   
+        }
+        .commentBox{
+            font-size: 0.8rem;
+        }
+    }
 }
