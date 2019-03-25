@@ -2,7 +2,7 @@
 
 .table{
   display: table;
-  width: 80%;
+  width: 90%;
   left: 0;
   top: 0;
   margin-bottom: 4vh;
@@ -14,7 +14,7 @@
 
 .table2{
   display: table;
-  width: 80%;
+  width: 90%;
   left: 0;
   top: 0;
   margin-bottom: 4vh;
@@ -36,11 +36,9 @@
 }
 
 .my-form{
-    min-width: 150px;
-    max-width: 43%;
+    width: 43%;
     float: left;
     display: table-cell;
-    width: 100%;
     border: solid 0.3rem black;
     border-radius: 1rem;
     background: white;
@@ -51,4 +49,12 @@
    
   .full-width {
     width: 100%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .my-form{
+      width: 86%;
+      margin-bottom: 1rem;
+     
+    }
   }

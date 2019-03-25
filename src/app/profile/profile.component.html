@@ -7,37 +7,37 @@
             <form class="my-form" (submit)="createProfile($event)">
            
                 <mat-toolbar>
-                    <h2>Create your Profile &nbsp;&nbsp;&nbsp;&nbsp;</h2>  <h3>Return to home page &nbsp;&nbsp;&nbsp;</h3> 
-                    <button mat-raised-button (click)="goHome($event)" class="dogButton">Home</button>
+                     <h2>Create your Profile </h2>   
+                    
                 </mat-toolbar>
                 <mat-card class="my-card">
                    <mat-card-content>
                       <div class="label1" >
                         <label class="input" >Name:&nbsp;</label>
-                          <input class="dogInput" matInput   name="name"  type="name" value="{{profile.name}}" >
+                          <input id="p1" class="dogInput" matInput   name="name"  type="name" value="{{profile.name}}" >
                         </div>
                         <div class="label2"  >
                           <label class="input" >Age:&nbsp;</label>
-                          <input class="dogInput"  matInput   name="age"  type="number" style="width: 5rem;" value="{{profile.age}}" >
+                          <input id="p2" class="dogInput"  matInput   name="age"  type="number"  value="{{profile.age}}" >
                         </div>
                         <div class="label7">&nbsp;</div>
                         <div class="label3" >
                           <label class="input" >Picture:&nbsp;</label>                              
-                          <input class="dogInput"  matInput   name="url"  type="url" style="width: 40rem;" value="{{profile.picture}}" >
+                          <input id="p3" class="dogInput"  matInput   name="url"  type="url" value="{{profile.picture}}" >
                         </div>
                         <div class="label7">&nbsp;</div>
                         <div class="label4" >
                           <label class="input" >Email:&nbsp;</label>
-                          <input class="dogInput" matInput   name="email"  type="email" style="width: 20rem;" value="{{profile.email}}" >
+                          <input id="p4" class="dogInput" matInput   name="email"  type="email"  value="{{profile.email}}" >
                         </div>
                         <div class="label5" >
                           <label class="input" >Phone:&nbsp;</label>
-                          <input class="dogInput" matInput   name="phone"  type="phone" value="{{profile.phone}}" >
+                          <input id="p5" class="dogInput" matInput   name="phone"  type="phone" value="{{profile.phone}}" >
                         </div>
                         <div class="label7">&nbsp;</div>
                         <div class="label6" >
                           <label class="input" >Address:&nbsp;</label>
-                          <input class="dogInput" matInput   name="address"  type="address" style="width: 40rem;" value="{{profile.address}}" >
+                          <input id="p6" class="dogInput" matInput   name="address"  type="address"  value="{{profile.address}}" >
                         </div>
                         
                         
@@ -63,6 +63,7 @@
           </mat-card>
           <br>
           <button mat-raised-button (click)="submit" class="dogButton">🐾Create Profile🐾</button>
+          <div class="homeButton" > <button mat-raised-button (click)="goHome($event)" class="dogButton"> Home</button></div>
           
         </form>
 

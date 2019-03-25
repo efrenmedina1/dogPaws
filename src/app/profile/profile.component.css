@@ -247,8 +247,8 @@ label{
 
   .modals3{
     position: fixed;
-    width: 60rem;
-    height: 35rem;
+    width: 55rem;
+    height: 37rem;
     z-index: 15;
     top: 50%;
     left: 50%;
@@ -257,9 +257,13 @@ label{
     box-shadow: 0 2vw 4vw 0 rgba(0, 0, 0, 0.497), 0 2vw 4vw 0 rgba(0, 0, 0, 0.585);
     border-radius: 2.5rem;
     border: solid black 5px;
-    padding: 1rem;
+    padding: 0.5rem;
     
   }
+.homeButton{
+  float: right;
+  margin-right: 1rem;
+}
 
   .headerModal{
     width: 80%;
@@ -365,6 +369,7 @@ label{
 }
 
 @media only screen and (max-width: 1000px) {
+
     .commentText{
         font-size: 0.9rem;
     }
@@ -372,6 +377,11 @@ label{
         width: 45rem;
         
       }
+
+      .modals3{
+        width: 45rem;
+      }
+
       .label7{
         height: 0.3rem;
     }
@@ -412,6 +422,9 @@ label{
         width: 35rem;
         
       }
+      .modals3{
+        width: 35rem;
+      }
       #p1{
         width: 10rem;   
     }
@@ -447,6 +460,9 @@ label{
         .modals2{
             width: 25rem;
             
+          }
+          .modals3{
+            width: 25rem;
           }
           #p1{
             width: 10rem;   
@@ -511,6 +527,10 @@ label{
         .modals2{
             width: 20rem;
             
+          }
+
+          .modals3{
+            width: 20rem;
           }
           #p1{
             width: 8rem;   
