@@ -32,7 +32,7 @@
       </form>
     </div>
 
-<div  class="table"  *ngFor="let comment of comment ">
+<div  class="table"  *ngFor="let comment of comment | paginate: { itemsPerPage: 9, currentPage: p }">
   <div class="two" > 
     <p> Posted by: <b>{{comment.username}}</b></p>
   </div> 
@@ -53,6 +53,9 @@
       </div>
     </form> -->
   </div>
-
+  
   </div>
+  <pagination-controls class="myPagination"
+        (pageChange)="p = $event" maxSize="4">
+      </pagination-controls>
   

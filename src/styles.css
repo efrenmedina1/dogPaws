@@ -29,3 +29,13 @@
     border: 0px;
     font-size: 1rem;
   }
+
+  .myPagination {
+    text-align: center;
+  }
+
+  .myPagination .ngx-pagination .current {
+    background:  rgb(255, 106, 6);
+    font-size: 24px;
+    color: black;
+  }

@@ -187,11 +187,7 @@
   </form>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-<div *ngFor="let dog of dog">
 
-
-</div>
-<br>
 
 
 
@@ -201,7 +197,8 @@
 <div class="container">
   <div class="row">
 
-    <div class="list" *ngFor="let dog of dog">
+    <div class="list" *ngFor="let dog of dog | paginate: { itemsPerPage: 9, currentPage: p }">
+      
 
       <!-- <div class="box-part text-center">
 
@@ -293,7 +290,10 @@
 
     </div>
   </div>
-
+</div>
+<pagination-controls class="myPagination"
+        (pageChange)="p = $event" maxSize="4">
+      </pagination-controls>
 </div>
 
 <div class="modals"  *ngIf="profile" >
