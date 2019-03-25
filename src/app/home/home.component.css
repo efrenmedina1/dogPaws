@@ -32,6 +32,10 @@
   overflow:hidden;
   position:relative;
   width:900px;
+  top:-100%;
+  z-index: -100;
+  
+  
 }
 .slides ul {
   list-style:none;
@@ -117,6 +121,7 @@
 }
 .slides ul li img {
   display:block;
+  background-blend-mode: lighten
 }
 /* keyframes #anim_titles */
 @-webkit-keyframes anim_titles {
@@ -172,7 +177,7 @@
   left:10%;
   margin:0 auto;
   padding:20px;
-  position:absolute;
+  /* position:absolute; */
   top:50%;
   width:200px;
   /* css3 animation */
@@ -196,24 +201,37 @@
 
 .image{
   width: 50rem;
-  height: 26.5rem
+  height: 26.5rem;
+  background-image: rgba (0,0,0,0.5);
+  z-index: 0;
+  background-blend-mode: lighten;
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 480px) {
   image {
     width: 40rem;
-  height: 26.5rem
+  height: 26.5rem;
+  background-blend-mode: lighten
   }
 }
 
 .about{
-  text-align: center
+  text-align: center;
+  color: black
 }
 
-.a1{
-  
+.contain{
+  text-align: center;
+  /* width: 99%; */
+  margin: 20%
 }
 
+.statement{
+  font-size: 3vh;
+  z-index: 5;
+}
+/* 
 .box {
   display: flex;
   height: 100%;
@@ -265,4 +283,4 @@
 	to {
 		left: -100%;
 	}
-}
+} */
