@@ -32,6 +32,26 @@ public Profile = {};
     return this.http.get(`${APIURL}/doglist/`);
 }
 
+dogBreed(e) {
+  e.preventDefault(); 
+  let id = e.target.elements[0].value;
+  console.log(id)
+  fetch(`${APIURL}/doglist/search/${id}`,{
+    method: 'GET',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': this.roleService.token
+    })
+  })
+  .then(response =>{  response.json()
+  .then(data => {this.dog = data})
+  .then(data => console.log(this.dog))
+})
+
+  
+}
+
+
 profileTrue(e) {
   e.preventDefault(); 
   let id = e.target.id;

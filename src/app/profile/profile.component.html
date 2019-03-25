@@ -12,31 +12,31 @@
                 <mat-card class="my-card">
                    <mat-card-content>
                       <div class="label1" >
-                        <label class="input" >Name</label>
-                          <input class="input" matInput   name="name"  type="name" value="{{profile.name}}" >
+                        <label class="input" >Name:&nbsp;</label>
+                          <input class="dogInput" matInput   name="name"  type="name" value="{{profile.name}}" >
                         </div>
                         <div class="label2"  >
-                          <label class="input" >Age</label>
-                          <input class="input"  matInput   name="age"  type="number" style="width: 5rem;" value="{{profile.age}}" >
+                          <label class="input" >Age:&nbsp;</label>
+                          <input class="dogInput"  matInput   name="age"  type="number" style="width: 5rem;" value="{{profile.age}}" >
                         </div>
                         <div class="label7">&nbsp;</div>
                         <div class="label3" >
-                          <label class="input" >Picture</label>                              
-                          <input class="input"  matInput   name="url"  type="url" style="width: 40rem;" value="{{profile.picture}}" >
+                          <label class="input" >Picture:&nbsp;</label>                              
+                          <input class="dogInput"  matInput   name="url"  type="url" style="width: 40rem;" value="{{profile.picture}}" >
                         </div>
                         <div class="label7">&nbsp;</div>
                         <div class="label4" >
-                          <label class="input" >Email</label>
-                          <input class="input" matInput   name="email"  type="email" style="width: 20rem;" value="{{profile.email}}" >
+                          <label class="input" >Email:&nbsp;</label>
+                          <input class="dogInput" matInput   name="email"  type="email" style="width: 20rem;" value="{{profile.email}}" >
                         </div>
                         <div class="label5" >
-                          <label class="input" >Phone</label>
-                          <input class="input" matInput   name="phone"  type="phone" value="{{profile.phone}}" >
+                          <label class="input" >Phone:&nbsp;</label>
+                          <input class="dogInput" matInput   name="phone"  type="phone" value="{{profile.phone}}" >
                         </div>
                         <div class="label7">&nbsp;</div>
                         <div class="label6" >
-                          <label class="input" >Address</label>
-                          <input class="input" matInput   name="address"  type="address" style="width: 40rem;" value="{{profile.address}}" >
+                          <label class="input" >Address:&nbsp;</label>
+                          <input class="dogInput" matInput   name="address"  type="address" style="width: 40rem;" value="{{profile.address}}" >
                         </div>
                         
                         
@@ -61,7 +61,7 @@
               
           </mat-card>
           <br>
-          <button mat-raised-button (click)="submit" color="gray">Create Profile</button>
+          <button mat-raised-button (click)="submit" class="dogButton">🐾Create Profile🐾</button>
           
         </form>
 
@@ -92,11 +92,11 @@
       <p> Address:  {{ profile.address }} </p>
     </div>
 
-    <div  class="tableCenter" (click)="dogCreateModalOpen($event)" >
+    <div  class="tableCenter" (click)="dogCreateModalOpen($event)" *ngIf="roleService.userRole" >
         <h3>Create a new Dog</h3>
     </div>
 
-    <div  class="tableCenter" (click)="profileUpdateModalOpen($event)" >
+    <div  class="tableCenter" (click)="profileUpdateModalOpen($event)" *ngIf="roleService.userRole" >
         <h3>Update Profile</h3>
     </div>
       
@@ -344,8 +344,8 @@
               <h3>Create a new Dog</h3>
               <br>
               <div class="input">
-                <label>Breed</label>
-                <select name="input"  >
+                <label>Breed:&nbsp;</label>
+                <select class="dogInput" name="input"  >
 
                     <option value="Airedale Terrier">Airedale Terrier</option>
                     <option value="Akita">Akita</option>
@@ -522,16 +522,16 @@
                   </select>
               </div>
               <div class="input">
-                <label>Name</label>
-                <input type="name">
+                <label>Name:&nbsp;</label>
+                <input class="dogInput" type="name">
               </div>
               <div class="input">
-                  <label>Age</label>
-                  <input type="number">
+                  <label>Age:&nbsp;</label>
+                  <input class="dogInput" type="number" style="width: 5rem;" >
                 </div>
               <div class="input">
-                <label>Picture URL</label>
-                <input type="picture">
+                <label>Picture URL:&nbsp;</label>
+                <input class="dogInput" type="picture" style="width: 27rem;" >
               </div>
               
               <textarea   
@@ -545,7 +545,7 @@
             </div>
       
             <div class="input">
-              <input type="submit" value="Create Dog">
+              <input class="dogButton" type="submit" value="Create Dog">
             </div>
           </form>
 
@@ -567,31 +567,31 @@
                       <mat-card class="my-card">
                          <mat-card-content>
                                 <div class="label1" >
-                                  <label class="input" >Name:</label>
-                                  <input class="input" matInput   name="name"  type="name" value="{{profile.name}}" >
+                                  <label class="input" >Name:&nbsp;</label>
+                                  <input class="dogInput" matInput   name="name"  type="name" value="{{profile.name}}" >
                                 </div>
                                 <div class="label2"  >
-                                  <label class="input" >Age:</label>
-                                  <input class="input"  matInput   name="age"  type="number" style="width: 5rem;" value="{{profile.age}}" >
+                                  <label class="input" >Age:&nbsp;</label>
+                                  <input class="dogInput"  matInput   name="age"  type="number" style="width: 5rem;" value="{{profile.age}}" >
                                 </div>
                                 <div class="label7">&nbsp;</div>
                                 <div class="label3" >
-                                  <label class="input" >Picture:</label>                              
-                                  <input class="input"  matInput   name="url"  type="url" style="width: 40rem;" value="{{profile.picture}}" >
+                                  <label class="input" >Picture:&nbsp;</label>                              
+                                  <input class="dogInput"  matInput   name="url"  type="url" style="width: 40rem;" value="{{profile.picture}}" >
                                 </div>
                                 <div class="label7">&nbsp;</div>
                                 <div class="label4" >
-                                  <label class="input" >Email:</label>
-                                  <input class="input" matInput   name="email"  type="email" style="width: 20rem;" value="{{profile.email}}" >
+                                  <label class="input" >Email:&nbsp;</label>
+                                  <input class="dogInput" matInput   name="email"  type="email" style="width: 20rem;" value="{{profile.email}}" >
                                 </div>
                                 <div class="label5" >
-                                  <label class="input" >Phone:</label>
-                                  <input class="input" matInput   name="phone"  type="phone" value="{{profile.phone}}" >
+                                  <label class="input" >Phone:&nbsp;</label>
+                                  <input class="dogInput" matInput   name="phone"  type="phone" value="{{profile.phone}}" >
                                 </div>
                                 <div class="label7">&nbsp;</div>
                                 <div class="label6" >
                                   <label class="input" >Address:</label>
-                                  <input class="input" matInput   name="address"  type="address" style="width: 40rem;" value="{{profile.address}}" >
+                                  <input class="dogInput" matInput   name="address"  type="address" style="width: 40rem;" value="{{profile.address}}" >
                                 </div>
                                 
                                 <div class="labeldescription" >
@@ -655,13 +655,14 @@
                                 <img class="imgDog" src="{{dogActive.picture}}"
                                   alt="card image">
                               </div>
-                            <div class="label1"> 
+                            <div class="label11"> 
                                   <div class="label3"> 
                                     <h3>Update a new Dog</h3>
                                     <br>
                                     <div class="label3">
-                                      <label>Breed</label>
-                                      <select name="input" value="{{dogActive.breed}}" >
+                                      <label>Breed:</label>
+                                      <br>
+                                      <select class="dogInput" name="input" value="{{dogActive.breed}}" >
 
                                           <option value="Airedale Terrier">Airedale Terrier</option>
                                           <option value="Akita">Akita</option>
@@ -838,20 +839,22 @@
                                         </select>
                                     </div>
                                     <div class="label3">
-                                      <label>Name</label>
-                                      <input type="name" value="{{dogActive.name}}" >
+                                      <label>Name:</label>
+                                      <br>
+                                      <input class="dogInput" type="name" value="{{dogActive.name}}" >
                                     </div>
                                     <div class="label3">
-                                        <label>Age</label>
-                                        <input type="number" value="{{dogActive.age}}" >
+                                        <label>Age:</label>
+                                        <br>
+                                        <input class="dogInput" type="number" value="{{dogActive.age}}" style="width: 5rem;" >
                                       </div>
                               </div>
                             </div>
                             <div class="table1"> 
                               <div class="label">
                                 <br>
-                                <label>Picture URL</label>
-                                <input type="picture" style="width: 27rem;" value="{{dogActive.picture}}" >
+                                <label>Picture URL:&nbsp;</label>
+                                <input class="dogInput" type="picture" style="width: 27rem;" value="{{dogActive.picture}}" >
                               </div>
                               
                               <textarea   
@@ -865,14 +868,14 @@
                             </div>
                       
                             <div class="input">
-                              <input class="dogButton" id=" {{dogActive.id}} " type="submit" value="Update Dog">
+                              <input class="dogButton" id=" {{dogActive.id}} " type="submit" value="Update Dog" *ngIf="roleService.userRole" >
                             </div>
                           </div>
                           </form>
                           <div class="trashDiv" > 
                           <form (submit)="deleteDog($event)"> 
                               &nbsp;
-                                <input class="dogButton" type="submit" value="🗑️Dog" id="{{ dogActive.id }}" >
+                                <input class="dogButton" type="submit" value="🗑️Dog" id="{{ dogActive.id }}" *ngIf="roleService.userRole" >
                               </form>
                           </div>
                  

@@ -20,3 +20,12 @@
     background-color: rgb(82, 122, 121);
     cursor: pointer;
   }
+
+  .dogInput{
+    background-color: rgba(104,154,153,1);
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0px;
+    font-size: 1rem;
+  }

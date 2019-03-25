@@ -16,6 +16,11 @@
       width: 50%;
       float: left;
   }
+  .label11{
+    width: 40%;
+    float: left;
+    margin: 0.5rem;
+}
   .label2{
     width: 25%;
     float: left;
@@ -29,7 +34,7 @@
     float: left;
 }
 .label5{
-    width: 30%;
+    width: 35%;
     float: left;
 }
 .label6{
@@ -202,9 +207,13 @@
     height: 15vh;
 }
 
+label{
+    font-weight: bold;
+}
+
 .modals{
     position: fixed;
-    width: 38rem;
+    width: 46rem;
     height: 37rem;
     z-index: 15;
     top: 50%;
@@ -219,7 +228,7 @@
 
   .modals2{
     position: fixed;
-    width: 50rem;
+    width: 53rem;
     height: 40rem;
     z-index: 15;
     top: 50%;
@@ -274,7 +283,7 @@
     height: 3rem;
     text-align: center;
     color: white;
-    border-radius: 0 2.2rem 0rem 0rem;
+    border-radius: 0 2.1rem 0rem 0rem;
     
 }
 
