@@ -133,7 +133,7 @@
     float: left;
     display: table-cell;
     background-color:  red;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     height: 3rem;
     text-align: center;
     color: white;
@@ -167,6 +167,10 @@
 
 p{
     font-size: 1.5rem;
+}
+
+.modalBody{
+    padding: 0.5rem;
 }
 
 
@@ -238,6 +242,17 @@ p{
 }
 
 @media only screen and (max-width: 600px) {
+    .modals{
+        width: 25rem;
+        height: 37rem;
+    }
+
+    .profilePic{
+        height: 13rem;
+    }
+    .profileAbout{
+        height: 8rem;
+    }
     p{
         font-size: 0.9rem;
     }
@@ -274,5 +289,20 @@ p{
     .two{
         width: 25%;
         height: 15rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .modals{
+        
+        width: 22rem;
+        height: 37rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .modals{
+        
+        width: 19rem;
+        height: 37rem;
     }
 }
