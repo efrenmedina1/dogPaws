@@ -19,6 +19,7 @@ export class TopicComponent implements OnInit {
   public comment = [];
   profile = false;
   public Profile = {};
+  p:any
   
 
   constructor(public roleService: RoleService, private router: Router, private http: HttpClient, private modalService: NgbModal,

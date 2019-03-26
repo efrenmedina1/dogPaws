@@ -13,6 +13,7 @@ export class DogListComponent implements OnInit {
 public dog = [];
 profile = false;
 public Profile = {};
+p:any
 
   constructor(private roleService: RoleService, private http: HttpClient) { }
 

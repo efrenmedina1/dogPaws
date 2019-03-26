@@ -13,6 +13,7 @@ import { Router } from '@angular/router'
 export class FourmComponent implements OnInit {
 
 public comment = [];
+p:any
 
 
   constructor(public roleService: RoleService, private router: Router, private http: HttpClient) { }
