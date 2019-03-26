@@ -51,6 +51,7 @@ logout(e) {
   this.roleService.adminRole = false
   this.roleService.userRole = false
   this.roleService.noRole = true
+  this.roleService.banRole = false
   this.router.navigate(['home'])
 }
 

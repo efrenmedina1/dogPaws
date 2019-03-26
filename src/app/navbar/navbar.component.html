@@ -23,7 +23,7 @@
               </div>
             </form> -->
 
-            <h1>Dog Paws</h1>
+            <h1>🐾Dog Paws🐾</h1>
 
 
       </div>
@@ -47,9 +47,11 @@
 
           <p *ngIf="roleService.userRole" >Profile</p>
           <p *ngIf="roleService.noRole">Login</p>
+          <p *ngIf="roleService.banRole" >Banned</p>
       </div>
       <div class="four" (click)="logout($event)" >
-        <p>Logout</p>
+        <p *ngIf="roleService.userRole" >Logout</p>
+        <p *ngIf="roleService.banRole" >Logout</p>
     </div>
 
   </div>

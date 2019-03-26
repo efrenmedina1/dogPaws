@@ -50,12 +50,13 @@ export class TopicComponent implements OnInit {
     let comment = e.target.elements[0].value;
     console.log(comment);
     console.log(this.roleService.token);
-
+    if(comment.length > 2) {
     fetch(`${APIURL}/reply/`, {
       method: 'POST',
       body: JSON.stringify(
         {
           "comment": comment,
+          "username": this.roleService.username,
           "userId": 5,
           "commentId": this.roleService.topic
           
@@ -66,7 +67,11 @@ export class TopicComponent implements OnInit {
         'Authorization': this.roleService.token
       })
     })
+    .then((res) => e.target.elements[0].value = "" )
     .then((res) => this.ngOnInit() )
+  } else{
+    window.alert("Please input a comment");
+  }
   }
 
 
@@ -74,7 +79,7 @@ export class TopicComponent implements OnInit {
     e.preventDefault(); 
     let id = e.target.id;
     console.log(id)
-    fetch(`${APIURL}/profile/${id}`,{
+    fetch(`${APIURL}/profilelist/${id}`,{
       method: 'GET',
       headers: new Headers({
         'Content-Type': 'application/json',
@@ -93,7 +98,9 @@ export class TopicComponent implements OnInit {
   profileFalse(e) {
     e.preventDefault(); 
 
-    this.profile = false
+    this.profile = false;
+    this.Profile = '';
+    console.log(this.Profile)
     
   }
 

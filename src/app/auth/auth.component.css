@@ -1,8 +1,53 @@
+
+
+.table{
+  display: table;
+  width: 80%;
+  left: 0;
+  top: 0;
+  margin-bottom: 4vh;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  margin-top: 4vh;
+  
+}
+
+.table2{
+  display: table;
+  width: 80%;
+  left: 0;
+  top: 0;
+  margin-bottom: 4vh;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  
+}
+
+.authHeader{
+  float: left;
+  display: table-cell;
+  width: 100%;
+  border: solid 0.3rem black;
+  border-radius: 1rem;
+  background: rgba(104,154,153,1);
+  color: white;
+  text-align: center;
+  
+}
+
 .my-form{
     min-width: 150px;
-    max-width: 500px;
+    max-width: 43%;
+    float: left;
+    display: table-cell;
     width: 100%;
+    border: solid 0.3rem black;
+    border-radius: 1rem;
+    background: white;
+    margin-left: 5%;
   }
+
+
    
   .full-width {
     width: 100%;

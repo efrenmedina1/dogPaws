@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RoleService } from "../role.service"
 import { HttpClient } from '@angular/common/http';
 import { APIURL } from '../../environments/environment.prod';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router' 
 
 
 @Component({
@@ -68,16 +68,18 @@ goTopic(e) {
 
 createPost(e) {
     e.preventDefault(); 
-    
     let comment = e.target.elements[0].value;
+    
+    
     console.log(comment);
     console.log(this.roleService.token);
-
+    if(comment.length > 8) {
     fetch(`${APIURL}/comments/`, {
       method: 'POST',
       body: JSON.stringify(
         {
           "description": comment,
+          "username": this.roleService.username,
           "userId": 5
           
           }
@@ -87,8 +89,11 @@ createPost(e) {
         'Authorization': this.roleService.token
       })
     })
+    .then((res) => e.target.elements[0].value = "" )
     .then((res) => this.ngOnInit() )
+  } else{
+    window.alert("Topic must be longer then eight characters");
   }
-  
+} 
 
 }
