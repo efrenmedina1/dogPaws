@@ -193,7 +193,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="list" *ngFor="let dog of dog">
+    <div class="list" *ngFor="let dog of dog | paginate: { itemsPerPage: 9, currentPage: p }">
 
       <!-- <div class="box-part text-center">
 
@@ -285,8 +285,10 @@
 
     </div>
   </div>
-
 </div>
+<pagination-controls class="myPagination"
+(pageChange)="p = $event" maxSize="4">
+</pagination-controls>
 
 <div class="modals"  *ngIf="profile" >
     <div class="headerProfile" > &nbsp;&nbsp; Profile</div>  <div class="closes" (click)="profileFalse($event)" > Close </div>

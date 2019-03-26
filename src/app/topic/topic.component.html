@@ -4,7 +4,7 @@
 
 <div><h2>Topic {{this.roleService.topic}} </h2></div>
 
-    <div  class="table"  *ngFor="let comment of comment ">
+    <div  class="table"  *ngFor="let comment of comment | paginate: { itemsPerPage: 10, currentPage: p } ">
         <div id="{{comment.userId}}" (click)="profileTrue($event)" class="two" > 
       
           <p id="{{comment.userId}}" >Posted by: </p>
@@ -81,3 +81,6 @@
                  
             
               </div>
+              <pagination-controls class="myPagination"
+(pageChange)="p = $event" maxSize="4">
+</pagination-controls>

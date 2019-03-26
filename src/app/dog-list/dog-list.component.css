@@ -1,4 +1,5 @@
 
+
 .table1{
     display: table;
     width: 80%;
@@ -186,6 +187,8 @@ img{
         display: block;
         background-image: url(../../assets/img/stock/dl_black.png);
     }
+
+    
 
 
     @media only screen and (max-width: 1350px) {
