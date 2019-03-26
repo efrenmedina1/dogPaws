@@ -1,83 +1,83 @@
-<div *ngIf="roleService.noRole" > 
-    <app-auth></app-auth>
+<div *ngIf="roleService.noRole">
+  <app-auth></app-auth>
+</div>
+
+<div>
+  <h2>Topic {{this.roleService.topic}} </h2>
+</div>
+
+<div class="table" *ngFor="let comment of comment | paginate: { itemsPerPage: 10, currentPage: p }">
+  <div id="{{comment.userId}}" (click)="profileTrue($event)" class="two">
+
+    <p id="{{comment.userId}}">Posted by: </p>
+    <p id="{{comment.userId}}"> <b id="{{comment.userId}}"> {{comment.username}} </b></p>
+    <p id="{{comment.userId}}">User ID: {{comment.userId}}</p>
+
   </div>
 
-<div><h2>Topic {{this.roleService.topic}} </h2></div>
+  <div id="{{comment.id}}" class="three" (click)="goTopic($event)">
+    <p id="{{comment.id}}">{{ comment.comment }}</p>
+  </div>
 
-    <div  class="table"  *ngFor="let comment of comment ">
-        <div id="{{comment.userId}}" (click)="profileTrue($event)" class="two" > 
-      
-          <p id="{{comment.userId}}" >Posted by: </p>
-          <p id="{{comment.userId}}" > <b id="{{comment.userId}}" >  {{comment.username}} </b></p>
-          <p id="{{comment.userId}}" >User ID: {{comment.userId}}</p>
-          
-        </div> 
-      
-        <div id="{{comment.id}}"  class="three" (click)="goTopic($event)" > 
-          <p id="{{comment.id}}" >{{ comment.comment }}</p>
-        </div>
-      
-          <div *ngIf="roleService.adminRole"  > 
-          <form (submit)="delete($event)">
-            <div class="input">
-              <input id="{{comment.id}}" type="submit" value="Delete">
-            </div>
-          </form>
-          <!-- <form (submit)="update($event)">
+  <div *ngIf="roleService.adminRole">
+    <form (submit)="delete($event)">
+      <div class="input">
+        <input id="{{comment.id}}" type="submit" value="Delete">
+      </div>
+    </form>
+    <!-- <form (submit)="update($event)">
             <div class="input"> 
               <input type="submit" value="Update">
             </div>
           </form> -->
-        </div>
-      
-        </div> 
+  </div>
 
-       
+</div>
 
-        <div  *ngIf="roleService.userRole"  > 
-            <form (submit)="createPost($event)">
-              <div class="table" >
-                 <div class="input1" >
-                  <label>Create Your Post</label>
-                </div>
 
-                  <div class="input2">
-                  <textarea   
-                    class="commentBox" 
-                    placeholder="Your Message"
-                    required
-                    data-validation-required-message="Please leave a message"
-                    name="message"
-                    maxlength="250"
-                           ></textarea>
-                </div>
-              </div>
-                <div class="input3" >
-                  <input class="dogButton" type="submit" value="🐾Post Comment🐾">
-                </div>
-              </form>
-            </div>
 
-      
-            <div class="modals"  *ngIf="profile" >
-                <div class="headerProfile" > &nbsp;&nbsp; Profile</div>  <div class="closes" (click)="profileFalse($event)" > Close </div>
+<div *ngIf="roleService.userRole">
+  <form (submit)="createPost($event)">
+    <div class="table">
+      <div class="input1">
+        <label>Create Your Post</label>
+      </div>
 
-                <div class="profilePic" > 
-                  <img src="{{ Profile[0].picture }}" class="img" /> 
-                </div>
-                
-                <div class="profileAbout" > 
-                  <p> Name: {{ Profile[0].name}}</p>
-                  <p> ID: {{ Profile[0].userId}}</p>
-                  <p> Age: {{ Profile[0].age}}</p>
-                </div> 
+      <div class="input2">
+        <textarea class="commentBox" placeholder="Your Message" required
+          data-validation-required-message="Please leave a message" name="message" maxlength="250"></textarea>
+      </div>
+    </div>
+    <div class="input3">
+      <input class="dogButton" type="submit" value="🐾Post Comment🐾">
+    </div>
+    <pagination-controls class="myPagination" (pageChange)="p = $event" maxSize="4">
+    </pagination-controls>
 
-                <div class="profileContact" > 
-                    <p> Email: {{ Profile[0].email}}</p>
-                    <p> Phone: {{ Profile[0].phone}}</p>
-                    <p> About: {{ Profile[0].about}}</p>
-                  </div> 
+  </form>
+</div>
 
-                 
-            
-              </div>
+
+<div class="modals" *ngIf="profile">
+  <div class="headerProfile"> &nbsp;&nbsp; Profile</div>
+  <div class="closes" (click)="profileFalse($event)"> Close </div>
+
+  <div class="profilePic">
+    <img src="{{ Profile[0].picture }}" class="img" />
+  </div>
+
+  <div class="profileAbout">
+    <p> Name: {{ Profile[0].name}}</p>
+    <p> ID: {{ Profile[0].userId}}</p>
+    <p> Age: {{ Profile[0].age}}</p>
+  </div>
+
+  <div class="profileContact">
+    <p> Email: {{ Profile[0].email}}</p>
+    <p> Phone: {{ Profile[0].phone}}</p>
+    <p> About: {{ Profile[0].about}}</p>
+  </div>
+
+
+
+</div>
