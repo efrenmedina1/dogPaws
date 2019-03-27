@@ -252,9 +252,13 @@ margin-bottom: 5rem
     
 }
 
-.row1{
-  display: table;
-  width: 90%;
+.row{
+  margin: 2rem;
+  margin-top: 5rem;
+}
+
+h1{
+  text-align: center
 }
 @media screen and (max-width: 1850px) {
   .image{
